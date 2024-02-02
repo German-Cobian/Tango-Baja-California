@@ -25,7 +25,7 @@ class Admin::ActivitiesController < AdminController
 
     respond_to do |format|
       if @admin_activity.save
-        format.html { redirect_to admin_activity_url(@admin_activity), notice: "Activity was successfully created." }
+        format.html { redirect_to admin_activity_url(@admin_activity), notice: "La Actividad ha sido creada." }
         format.json { render :show, status: :created, location: @admin_activity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admin::ActivitiesController < AdminController
   def update
     respond_to do |format|
       if @admin_activity.update(admin_activity_params)
-        format.html { redirect_to admin_activity_url(@admin_activity), notice: "Activity was successfully updated." }
+        format.html { redirect_to admin_activity_url(@admin_activity), notice: "La Actividad ha sido modificada." }
         format.json { render :show, status: :ok, location: @admin_activity }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class Admin::ActivitiesController < AdminController
     @admin_activity.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_activities_url, notice: "Activity was successfully destroyed." }
+      format.html { redirect_to admin_activities_url, notice: "La Actividad ha sido eliminada." }
       format.json { head :no_content }
     end
   end

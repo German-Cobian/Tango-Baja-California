@@ -1,14 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="ms-5"><%= notice %></p>
 
-<h1>Activities</h1>
-
-<div id="admin_activities">
-  <% @admin_activities.each do |admin_activity| %>
-    <%= render admin_activity %>
-    <p>
-      <%= link_to "Show this activity", admin_activity_path(admin_activity.id) %>
-    </p>
-  <% end %>
+<div class="d-flex flex-row justify-content-between mx-5">
+  <h3>Actividades</h3>
+  <%= link_to "Crea Una Actividad", new_admin_activity_path, class: "btn btn-outline-primary pt-1" %>
 </div>
 
-<%= link_to "New activity", new_admin_activity_path %>
+<div class="my-5 mx-5">
+  <div id="admin_activities" class="d-flex flex-wrap justify-content-around">
+    <% @admin_activities.each do |admin_activity| %>
+      <div class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+        <%= render admin_activity %>
+        <p>
+          <%= link_to "Mas", admin_activity_path(admin_activity.id) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+</div>

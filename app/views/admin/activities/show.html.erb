@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="ms-5"><%= notice %></p>
 
-<%= render @admin_activity %>
+<div class="border border-dark rounded mx-5 py-5 px-5">
+  <%= render @admin_activity %>
 
-<div>
-  <%= link_to "Edit this activity", edit_admin_activity_path(@admin_activity) %> |
-  <%= link_to "Back to activities", admin_activities_path %>
+  <div class="d-flex flex-row justify-content-end mb-3">
+    <%= button_to "Elimina esta Actividad", admin_activity_path(@admin_activity.id), method: :delete, class: 'btn btn-outline-danger' %>
+  </div>
 
-  <%= button_to "Destroy this activity", admin_activity_path(@admin_activity.id), method: :delete, method: :delete %>
+  <div>
+    <div class="d-flex flex-row mb-3">
+      <%= link_to "Cambiar la Actividad", edit_admin_activity_path(@admin_activity), class: 'me-3' %> |
+      <%= link_to "Listado de Actividades", admin_activities_path, class: 'ms-3' %>
+    </div>
+   
 </div>
