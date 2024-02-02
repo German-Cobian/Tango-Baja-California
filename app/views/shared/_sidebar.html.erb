@@ -1,7 +1,11 @@
 <aside class="container">
   <ul>
     <li class="text-white mb-3"><small>Nosotros</small></li>
-    <li class="text-white mb-3"><small>Actividades</small></li>
+    <li class="text-white mb-3">
+      <%= link_to admin_activities_path do %>
+      <span><small>Actividades</small></span>
+      <% end %>
+    </li>
     <li class="text-white mb-3"><small>Publicaciones</small></li>
     <li class="text-white mb-3"><small>Fotos</small></li>
     <li class="text-white mb-3"><small>Videos</small></li>
