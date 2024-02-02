@@ -11,6 +11,40 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <%= render 'shared/sidebar' %>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="div-mc">
+        <button class="button-mc btn btn-outline-primary" id="toggleButton">O</button>
+      </div>
+
+      <!-- Page content -->
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleButton = document.getElementById('toggleButton');
+    
+    toggleButton.addEventListener('click', function () {
+      sidebar.classList.toggle('open');
+      updateButtonText();
+    });
+
+    // Function to update button text based on sidebar state
+    function updateButtonText() {
+      const isOpen = sidebar.classList.contains('open');
+      toggleButton.textContent = isOpen ? 'X' : 'O';
+    }
+  });
+</script>
   </body>
 </html>
+
