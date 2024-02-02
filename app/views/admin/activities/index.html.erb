@@ -6,15 +6,51 @@
 </div>
 
 <div class="my-5 mx-5">
-  <div id="admin_activities" class="d-flex flex-wrap justify-content-around">
-    <% @admin_activities.each do |admin_activity| %>
-      <div class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
-        <%= render admin_activity %>
-        <p>
-          <%= link_to "Mas", admin_activity_path(admin_activity.id) %>
-        </p>
-      </div>
+
+  <% @admin_activities.group_by(&:category).each do |category, activities| %>
+    <% if category == 'Clase' %>
+      <h2>Clases</h2>
+      <ul class="d-flex flex-wrap">
+        <% activities.each do |activity| %>
+          <% if activity.category == 'Clase' %>
+            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render activity %>
+            <p>
+              <%= link_to "Mas", admin_activity_path(activity.id) %>
+            </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% elsif category == 'Taller' %>
+      <h2>Talleres</h2>
+      <ul class="d-flex flex-wrap">
+        <% activities.each do |activity| %>
+          <% if activity.category == 'Taller' %>
+            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render activity %>
+              <p>
+                <%= link_to "Mas", admin_activity_path(activity.id) %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% elsif category == 'Seminario' %>
+      <h2>Seminarios</h2>
+      <ul class="d-flex flex-wrap">
+        <% activities.each do |activity| %>
+          <% if activity.category == 'Seminario' %>
+            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render activity %>
+              <p>
+                <%= link_to "Mas", admin_activity_path(activity.id) %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
     <% end %>
-  </div>
+  <% end %>
 
 </div>

@@ -28,23 +28,23 @@
       </div>
     </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleButton = document.getElementById('toggleButton');
-    
-    toggleButton.addEventListener('click', function () {
-      sidebar.classList.toggle('open');
-      updateButtonText();
-    });
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.querySelector('.sidebar');
+        const toggleButton = document.getElementById('toggleButton');
+        
+        toggleButton.addEventListener('click', function () {
+          sidebar.classList.toggle('open');
+          updateButtonText();
+        });
 
-    // Function to update button text based on sidebar state
-    function updateButtonText() {
-      const isOpen = sidebar.classList.contains('open');
-      toggleButton.textContent = isOpen ? 'x' : '+';
-    }
-  });
-</script>
+        // Function to update button text based on sidebar state
+        function updateButtonText() {
+          const isOpen = sidebar.classList.contains('open');
+          toggleButton.textContent = isOpen ? 'x' : '+';
+        }
+      });
+    </script>
   </body>
 </html>
 
