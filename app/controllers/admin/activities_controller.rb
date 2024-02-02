@@ -1,4 +1,4 @@
-class Admin::ActivitiesController < ApplicationController
+class Admin::ActivitiesController < AdminController
   before_action :set_admin_activity, only: %i[ show edit update destroy ]
 
   # GET /admin/activities or /admin/activities.json

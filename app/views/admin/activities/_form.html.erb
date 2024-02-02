@@ -1,4 +1,4 @@
-<%= form_with(model: admin_activity) do |form| %>
+<%= form_with(model: [:admin, admin_activity]) do |form| %>
   <% if admin_activity.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(admin_activity.errors.count, "error") %> prohibited this admin_activity from being saved:</h2>

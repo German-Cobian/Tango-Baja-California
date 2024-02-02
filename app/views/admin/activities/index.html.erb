@@ -6,7 +6,7 @@
   <% @admin_activities.each do |admin_activity| %>
     <%= render admin_activity %>
     <p>
-      <%= link_to "Show this activity", admin_activity %>
+      <%= link_to "Show this activity", admin_activity_path(admin_activity.id) %>
     </p>
   <% end %>
 </div>
