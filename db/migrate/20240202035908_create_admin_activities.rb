@@ -3,7 +3,7 @@ class CreateAdminActivities < ActiveRecord::Migration[7.0]
     create_table :activities do |t|
       t.string :category
       t.string :title
-      t.string :description
+      t.text :description
       t.string :time
       t.string :place
 
