@@ -19,7 +19,7 @@
 
       <!-- Toggle Button -->
       <div class="div-mc">
-        <button class="button-mc btn btn-outline-primary" id="toggleButton">O</button>
+        <button class="button-mc btn btn-outline-primary border border-primary" id="toggleButton">+</button>
       </div>
 
       <!-- Page content -->
@@ -41,7 +41,7 @@
     // Function to update button text based on sidebar state
     function updateButtonText() {
       const isOpen = sidebar.classList.contains('open');
-      toggleButton.textContent = isOpen ? 'X' : 'O';
+      toggleButton.textContent = isOpen ? 'x' : '+';
     }
   });
 </script>
