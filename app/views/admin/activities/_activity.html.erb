@@ -1,5 +1,9 @@
 <div id="<%= dom_id activity %>">
 
+  <div class="mb-3">
+    <%= activity.images.any? ? image_tag(activity.images.first, height: 100, width: 100) : image_tag("https://via.placeholder.com/100")%>
+  </div>
+
   <p>
     <strong>Categoria:</strong>
     <%= activity.category %>

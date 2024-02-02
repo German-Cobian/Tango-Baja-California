@@ -36,14 +36,16 @@ class Admin::ActivitiesController < AdminController
 
   # PATCH/PUT /admin/activities/1 or /admin/activities/1.json
   def update
-    respond_to do |format|
-      if @admin_activity.update(admin_activity_params)
-        format.html { redirect_to admin_activity_url(@admin_activity), notice: "La Actividad ha sido modificada." }
-        format.json { render :show, status: :ok, location: @admin_activity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_activity.errors, status: :unprocessable_entity }
+    @admin_activity = Activity.find(params[:id])
+    if @admin_activity.update(admin_activity_params.reject { |k| k["images"] })
+      if admin_activity_params["images"]
+        admin_activity_params["images"].each do |image|
+          @admin_activity.images.attach(image)
+        end
       end
+      redirect_to admin_activities_path, notice: "La Actividad ha sido modificada."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -65,6 +67,6 @@ class Admin::ActivitiesController < AdminController
 
     # Only allow a list of trusted parameters through.
     def admin_activity_params
-      params.require(:activity).permit(:category, :title, :description, :time, :place)
+      params.require(:activity).permit(:category, :title, :description, :time, :place, images: [])
     end
 end
