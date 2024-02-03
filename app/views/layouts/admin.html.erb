@@ -10,16 +10,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
+  <body data-controller="admin-sidebar">
     <div>
       <!-- Sidebar -->
-      <div class="sidebar">
-        <%= render 'shared/sidebar' %>
+      <div class="sidebar" data-target="admin-sidebar.sidebar">
+        <%= render 'shared/admin_sidebar' %>
       </div>
 
       <!-- Toggle Button -->
-      <div class="div-mc">
-        <button class="button-mc btn btn-outline-primary border border-primary" id="toggleButton">+</button>
+      <div class="divtoggleBtn">
+        <button class="toggleButton btn btn-outline-primary border border-primary" data-target="admin-sidebar.toggleButton">+</button>
       </div>
 
       <!-- Page content -->
@@ -27,24 +27,6 @@
         <%= yield %>
       </div>
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const sidebar = document.querySelector('.sidebar');
-        const toggleButton = document.getElementById('toggleButton');
-        
-        toggleButton.addEventListener('click', function () {
-          sidebar.classList.toggle('open');
-          updateButtonText();
-        });
-
-        // Function to update button text based on sidebar state
-        function updateButtonText() {
-          const isOpen = sidebar.classList.contains('open');
-          toggleButton.textContent = isOpen ? 'x' : '+';
-        }
-      });
-    </script>
   </body>
 </html>
 
