@@ -1,0 +1,11 @@
+<h1>Editing article</h1>
+
+<%= render "form", admin_article: @admin_article %>
+
+<br>
+
+<div>
+  <%= link_to "Show this article", admin_article_path(@admin_article.id) %> |
+  <%= link_to "Back to articles", admin_articles_path %>
+</div>
+
