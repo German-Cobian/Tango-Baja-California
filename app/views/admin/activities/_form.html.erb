@@ -15,7 +15,7 @@
 
     <div class="mb-3">
       <b><%= form.label "Categoria:", class: "form-label" %></b><br />
-      <%= form.text_field :category, class: "form-control form-control-sm" %>
+      <%= form.select :category, [["clase", "Clase"], ["taller", "Taller"], ["seminario", "Seminario"]], class: "form-control form-control-sm" %>
     </div>
 
     <div class="mb-3">

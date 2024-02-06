@@ -1,7 +1,7 @@
 <p style="color: green" class="ms-5"><%= notice %></p>
 
 <div class="d-flex flex-row justify-content-between mx-5">
-  <h3>Actividades</h3>
+  <h3 class="ms-5">Actividades</h3>
   <%= link_to "Crea Una Actividad", new_admin_activity_path, class: "btn btn-outline-primary pt-1" %>
 </div>
 
@@ -9,7 +9,7 @@
 
   <% @admin_activities.group_by(&:category).each do |category, activities| %>
     <% if category == 'Clase' %>
-      <h2>Clases</h2>
+      <h4 class="ms-5">Clases</h4>
       <ul class="d-flex flex-wrap">
         <% activities.each do |activity| %>
           <% if activity.category == 'Clase' %>
@@ -23,7 +23,7 @@
         <% end %>
       </ul>
     <% elsif category == 'Taller' %>
-      <h2>Talleres</h2>
+      <h4 class="mt-5 ms-5">Talleres</h4>
       <ul class="d-flex flex-wrap">
         <% activities.each do |activity| %>
           <% if activity.category == 'Taller' %>
@@ -37,7 +37,7 @@
         <% end %>
       </ul>
     <% elsif category == 'Seminario' %>
-      <h2>Seminarios</h2>
+      <h4 class="mt-5 ms-5">Seminarios</h4>
       <ul class="d-flex flex-wrap">
         <% activities.each do |activity| %>
           <% if activity.category == 'Seminario' %>

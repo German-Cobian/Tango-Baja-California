@@ -10,16 +10,16 @@ export default class extends Controller {
   }
 
   toggleSidebar() {
-    console.log("clicked button")
+    console.log("clicked b")
     this.sidebarTarget.classList.toggle("open");
     this.updateButtonText();
   }
 
   updateButtonText() {
-    console.log("updating text")
+    console.log()
     const isOpen = this.sidebarTarget.classList.contains("open");
     console.log("Is Open:", isOpen);
-    this.toggleButtonTarget.textContent = isOpen ? "x" : "+";
+    this.toggleButtonTarget.textContent = isOpen ? "x" : ">";
   }
 }
 
