@@ -1,11 +1,10 @@
-<h1>Editing article</h1>
+<h3 class="ms-5">Edita Esta Publicacion</h3>
 
 <%= render "form", admin_article: @admin_article %>
 
 <br>
 
-<div>
-  <%= link_to "Show this article", admin_article_path(@admin_article.id) %> |
-  <%= link_to "Back to articles", admin_articles_path %>
+<div class="ms-5 mb-5">
+  <%= link_to "Mostrar Esta Publicacion", admin_article_path(@admin_article.id), class: 'me-3' %> |
+  <%= link_to "Listado de Publicaciones", admin_articles_path, class: 'ms-3' %>
 </div>
-

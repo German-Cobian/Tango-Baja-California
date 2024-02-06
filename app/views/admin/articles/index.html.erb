@@ -1,14 +1,56 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="ms-5"><%= notice %></p>
 
-<h1>Articles</h1>
-
-<div id="admin_articles">
-  <% @admin_articles.each do |admin_article| %>
-    <%= render admin_article %>
-    <p>
-      <%= link_to "Mas", admin_article_path(admin_article.id) %>
-    </p>
-  <% end %>
+<div class="d-flex flex-row justify-content-between mx-5">
+  <h3 class="ms-5">Publicaciones</h3>
+  <%= link_to "Crea Una Publicacion", new_admin_article_path, class: "btn btn-outline-primary pt-1" %>
 </div>
 
-<%= link_to "New article", new_admin_article_path %>
+<div class="my-5 mx-5">
+
+  <% @admin_articles.group_by(&:category).each do |category, articles| %>
+    <% if category == 'Miscelanea' %>
+      <h4 class="ms-5">Miscelanea</h4>
+      <ul class="d-flex flex-wrap">
+        <% articles.each do |article| %>
+          <% if article.category == 'Miscelanea' %>
+            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render article %>
+            <p>
+              <%= link_to "Mas", admin_article_path(article.id) %>
+            </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% elsif category == 'Tecnica de Varon' %>
+      <h4 class="mt-5 ms-5">Tecnica de Varon</h4>
+      <ul class="d-flex flex-wrap">
+        <% articles.each do |article| %>
+          <% if article.category == 'Tecnica de Varon' %>
+            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render article %>
+              <p>
+                <%= link_to "Mas", admin_article_path(article.id) %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% elsif category == 'Tecnica de Mujer' %>
+      <h4 class="mt-5 ms-5">Tecnica de Mujer</h4>
+      <ul class="d-flex flex-wrap">
+        <% articles.each do |article| %>
+          <% if article.category == 'Tecnica de Mujer' %>
+            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render article %>
+              <p>
+                <%= link_to "Mas", admin_article_path(article.id) %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+</div>

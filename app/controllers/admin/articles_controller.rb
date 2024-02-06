@@ -25,7 +25,7 @@ class Admin::ArticlesController < AdminController
 
     respond_to do |format|
       if @admin_article.save
-        format.html { redirect_to admin_article_url(@admin_article), notice: "Article was successfully created." }
+        format.html { redirect_to admin_article_url(@admin_article), notice: "La Publicacion ha sido creada." }
         format.json { render :show, status: :created, location: @admin_article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admin::ArticlesController < AdminController
   def update
     respond_to do |format|
       if @admin_article.update(admin_article_params)
-        format.html { redirect_to admin_article_url(@admin_article), notice: "Article was successfully updated." }
+        format.html { redirect_to admin_article_url(@admin_article), notice: "La Publicacion ha sido modificada." }
         format.json { render :show, status: :ok, location: @admin_article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class Admin::ArticlesController < AdminController
     @admin_article.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_articles_url, notice: "Article was successfully destroyed." }
+      format.html { redirect_to admin_articles_url, notice: "La Publicacion ha sido eliminada." }
       format.json { head :no_content }
     end
   end
