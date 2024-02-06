@@ -36,14 +36,16 @@ class Admin::ArticlesController < AdminController
 
   # PATCH/PUT /admin/articles/1 or /admin/articles/1.json
   def update
-    respond_to do |format|
-      if @admin_article.update(admin_article_params)
-        format.html { redirect_to admin_article_url(@admin_article), notice: "La Publicacion ha sido modificada." }
-        format.json { render :show, status: :ok, location: @admin_article }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_article.errors, status: :unprocessable_entity }
+    @admin_article = Article.find(params[:id])
+    if @admin_article.update(admin_article_params.reject { |k| k["images"] })
+      if admin_article_params["images"]
+        admin_article_params["images"].each do |image|
+          @admin_article.images.attach(image)
+        end
       end
+      redirect_to admin_articles_path, notice: "La Publicacion ha sido modificada."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -65,6 +67,6 @@ class Admin::ArticlesController < AdminController
 
     # Only allow a list of trusted parameters through.
     def admin_article_params
-      params.require(:article).permit(:category, :title, :text)
+      params.require(:article).permit(:category, :title, :text, images: [])
     end
 end

@@ -1,4 +1,10 @@
 <div id="<%= dom_id article %>">
+
+  <div class="mb-3">
+    <%= article.images.any? ? image_tag(article.images.first, height: 100, width: 100) : image_tag("https://via.placeholder.com/100")%>
+  </div>
+
+
   <p>
     <strong>Categoria:</strong>
     <%= article.category %>
@@ -10,7 +16,7 @@
   </p>
 
   <p>
-    <strong>Texto:</strong>
+    <strong>Text:</strong>
     <%= article.text %>
   </p>
 

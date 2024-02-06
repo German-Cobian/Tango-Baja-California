@@ -28,6 +28,11 @@
       <%= form.text_area :text, size: "100x4", class: "form-control form-control-sm" %>
     </div>
 
+    <div class="mb-3">
+      <b><%= form.label "Imagenes:", class: "form-label" %></b><br />
+      <%= form.file_field :images, multiple: true, class: "form-control form-control-sm" %>
+    </div>
+
     <div class="d-flex flex-row justify-content-end mt-3">
       <%= form.submit class: 'btn btn-outline-primary' %>
     </div>
