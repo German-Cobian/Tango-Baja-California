@@ -1,0 +1,9 @@
+<h3 class="ms-5">Edita Este Album</h3>
+
+<%= render "form", admin_album: @admin_album %>
+
+<br>
+
+<div class="ms-5 mb-5">
+  <%= link_to "Mostrar Este Album", admin_album_path(@admin_album.id), class: 'me-3' %>
+</div>

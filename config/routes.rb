@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get "admin" => "admin#index"
 
   namespace :admin do
-    resources :articles
     resources :activities
+    resources :articles
+    resources :albums
   end
 
 end
