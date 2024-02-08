@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'admin_articles' %>
+
 <p style="color: green" class="ms-5"><%= notice %></p>
 
 <div class="d-flex flex-row justify-content-between mt-3 mx-5">
@@ -15,7 +17,7 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Miscelanea' %>
-            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
               <%= render article %>
             <p class="d-flex flex-row justify-content-end">
               <%= link_to "Mas", admin_article_path(article.id) %>
@@ -29,7 +31,7 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Historia del Tango' %>
-            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
               <%= render article %>
               <p class="d-flex flex-row justify-content-end">
                 <%= link_to "Mas", admin_article_path(article.id) %>
@@ -43,7 +45,7 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Tecnica' %>
-            <li class="d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
               <%= render article %>
               <p class="d-flex flex-row justify-content-end">
                 <%= link_to "Mas", admin_article_path(article.id) %>
