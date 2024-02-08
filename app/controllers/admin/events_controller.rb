@@ -3,7 +3,8 @@ class Admin::EventsController < AdminController
 
   # GET /admin/events or /admin/events.json
   def index
-    @admin_events = Event.all
+    @admin_events = Event.where(start_time: Time.now.beginning_of_month.beginning_of_week..
+    Time.now.end_of_month.end_of_week)
   end
 
   # GET /admin/events/1 or /admin/events/1.json
