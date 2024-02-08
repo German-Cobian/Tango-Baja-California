@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :activities
     resources :articles
     resources :albums
+    resources :media
   end
 
 end

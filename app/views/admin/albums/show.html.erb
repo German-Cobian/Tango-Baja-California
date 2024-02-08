@@ -1,15 +1,57 @@
+<%= stylesheet_link_tag 'admin_albums' %>
+
 <p style="color: green" class="ms-5"><%= notice %></p>
 
-<div class="border border-dark rounded mx-5 py-5 px-5">
-  <%= render @admin_album %>
+<div class="my-3 mx-5">
 
-  <div class="d-flex flex-row justify-content-end mb-3">
-    <%= button_to "Elimina este Album", admin_album_path(@admin_album.id), method: :delete, class: 'btn btn-outline-danger' %>
+  <div class="d-flex flex-row justify-content-between">
+    <div class="w-75">
+      <h4><%= @admin_album.topic %></h4>
+      <p><%= @admin_album.description %></p>
+    </div>
+    <div>
+      <%= link_to "Agrega Un Elemento", new_admin_medium_path(album_id: @admin_album.id), class: "btn btn-outline-primary py-0" %>
+    </div>
   </div>
 
-  <div>
-    <div class="d-flex flex-row mb-3">
-      <%= link_to "Cambiar el Album", edit_admin_album_path(@admin_album), class: 'me-3' %>
-    </div>
-   
+  <div class="d-flex flex-wrap justify-content-start">
+    <% @media.order('created_at DESC').each do |medium|%>
+      <div class="album-container d-flex flex-column flex-lg-row border border-dark rounded mt-3 me-3">
+        <div class="my-3 mx-3">
+          <div class="d-flex flex-column align-items-center mb-5">
+            <div class="row">
+              <% if medium.image.attached? %>
+                <%= image_tag medium.image, height: 200, width: 200, class: ""  %>
+              <% end %>
+            </div>
+            <div class="row">
+              <% if medium.file.attached? %>
+                <% if medium.file.video? %>
+                  <%= video_tag url_for(medium.file), controls: "" %>
+                <% elsif medium.file.previewable? %>
+                  <div style="height:200px;width:200px">
+                    <%= image_tag medium.image.preview(resize_to_fit: [200,200]) %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <h6><b><%= medium.title %></b></h6>
+          <p><%= truncate medium.description, length: 200 %></p>
+          <p class="d-flex flex-row justify-content-end">
+            <%= link_to 'Mas', admin_medium_path(medium) %>
+          </p> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="d-flex flex-row justify-content-end my-3">
+    <%= button_to "Elimina este Album", admin_album_path(@admin_album.id), method: :delete, class: 'btn btn-outline-danger py-0' %>
+  </div>
+  <div class="d-flex flex-row">
+    <%= link_to "Edita el Album", edit_admin_album_path(@admin_album), class: 'me-3' %> |
+    <%= link_to "Listado de Albumes", admin_albums_path, class: 'ms-3' %>
+  </div>
+
 </div>

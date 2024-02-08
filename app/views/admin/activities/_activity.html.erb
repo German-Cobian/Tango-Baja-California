@@ -1,32 +1,26 @@
-<div id="<%= dom_id activity %>">
+<div id="<%= dom_id activity %>" class="mb-5">
 
-  <div class="mb-3">
-    <%= activity.images.any? ? image_tag(activity.images.first, height: 100, width: 100) : image_tag("https://via.placeholder.com/100")%>
+  <div class="d-flex flex-column align-items-center mb-3">
+    <p class="row mb-3">
+      <strong><%= activity.title %></strong>
+    </p>
+    <div class="row">
+      <%= activity.images.any? ? image_tag(activity.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+    </div>
   </div>
 
   <p>
-    <strong>Categoria:</strong>
-    <%= activity.category %>
-  </p>
-
-  <p>
-    <strong>Titulo:</strong>
-    <%= activity.title %>
-  </p>
-
-  <p>
-    <strong>Descripcion:</strong>
     <%= activity.description %>
   </p>
 
-  <p>
-    <strong>Fecha/Horario:</strong>
-    <%= activity.time %>
-  </p>
+  <div class="d-flex flex-row">
+    <%= image_tag "calendar.png", height:"20", width: "20", class: "mt-1 me-3" %>
+    <p><%= activity.time %></p>
+  </div>
 
-  <p>
-    <strong>Lugar:</strong>
-    <%= activity.place %>
-  </p>
+  <div class="d-flex flex-row">
+    <%= image_tag "location.png", height:"20", width: "20", class: "mt-1 me-3" %>
+    <p><%= activity.place %></p>
+  </div>
 
 </div>

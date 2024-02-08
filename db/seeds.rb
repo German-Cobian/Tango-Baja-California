@@ -1,7 +1,100 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+puts "Seeding..."
+
+Activity.create(
+  category: 'Clase',
+  title: 'Principiantes',
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  time: 'Martes 23 de Julio, 5:pm',
+  place: 'Callejon del Duende',
+).images.attach(io: File.open('app/assets/images/embrace1.jpeg'), filename: 'embrace1.jpeg')
+
+Activity.create(
+  category: 'Taller',
+  title: 'La Importancia de Intencionar',
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  time: 'Martes 23 de Julio, 5:pm',
+  place: 'El Lugar del Jaguar',
+).images.attach(io: File.open('app/assets/images/feet1.jpeg'), filename: 'feet1.jpeg')
+
+Activity.create(
+  category: 'Seminario',
+  title: 'El Tango como Modus Vivendi',
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  time: 'Martes 23 de Julio, 5:pm',
+  place: 'Lo de Andres',
+).images.attach(io: File.open('app/assets/images/embrace2.jpeg'), filename: 'embrace2.jpeg')
+
+Article.create(
+  category: 'Miscelanea',
+  title: 'Milonguenado en Buenos Aires',
+  text: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+).images.attach(io: File.open('app/assets/images/feet2.jpeg'), filename: 'feet2.jpeg')
+
+Article.create(
+  category: 'Tecnica',
+  title: 'Para No Perder el Equilibrio',
+  text: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+).images.attach(io: File.open('app/assets/images/embrace3.jpeg'), filename: 'embrace3.jpeg')
+
+Article.create(
+  category: 'Historia del Tango',
+  title: 'El Tango y Los Imigrantes Arrabaleros',
+  text: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+).images.attach(io: File.open('app/assets/images/feet3.jpeg'), filename: 'feet.3.jpeg')
+
+Album.create(
+  topic: 'Our Clases',
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+)
+
+Album.create(
+  topic: 'Milongas',
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+)
+
+Album.create(
+  topic: 'Presentations',
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+)
+
+Medium.create(
+  title: 'Lorena Lost Her Shoe!', 
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  album_id: 1,
+).image.attach(io: File.open('app/assets/images/feet4.jpeg'), filename: 'feet4.jpeg')
+
+Medium.create(
+  title: 'Eveybodys Goin ta Town!', 
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  album_id: 2,
+).image.attach(io: File.open('app/assets/images/embrace4.jpeg'), filename: 'embrace4.jpeg')
+
+Medium.create(
+  title: 'Watch Them Fly!', 
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  album_id: 3,
+).image.attach(io: File.open('app/assets/images/feet5.jpeg'), filename: 'feet5.jpeg')

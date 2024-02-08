@@ -1,22 +1,15 @@
-<div id="<%= dom_id article %>">
+<div id="<%= dom_id article %>" class="mb-5">
 
-  <div class="mb-3">
-    <%= article.images.any? ? image_tag(article.images.first, height: 100, width: 100) : image_tag("https://via.placeholder.com/100")%>
+  <div class="d-flex flex-column align-items-center mb-3">
+    <p class="row mb-3">
+      <strong><%= article.title %></strong>
+    </p>
+    <div class="row">
+      <%= article.images.any? ? image_tag(article.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+    </div>
   </div>
 
-
   <p>
-    <strong>Categoria:</strong>
-    <%= article.category %>
-  </p>
-
-  <p>
-    <strong>Titulo:</strong>
-    <%= article.title %>
-  </p>
-
-  <p>
-    <strong>Text:</strong>
     <%= article.text %>
   </p>
 

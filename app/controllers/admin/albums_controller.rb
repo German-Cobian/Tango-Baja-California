@@ -3,11 +3,13 @@ class Admin::AlbumsController < AdminController
 
   # GET /admin/albums or /admin/albums.json
   def index
-    @admin_album = Album.all
+    @admin_albums = Album.all
   end
 
   # GET /admin/albums/1 or /admin/albums/1.json
   def show
+    @admin_album = Album.find(params[:id])
+    @media = @admin_album.media.all
   end
 
   # GET /admin/albums/new

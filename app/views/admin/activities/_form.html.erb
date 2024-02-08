@@ -15,7 +15,7 @@
 
     <div class="mb-3">
       <b><%= form.label "Categoria:", class: "form-label" %></b><br />
-      <%= form.select :category, [["clase", "Clase"], ["taller", "Taller"], ["seminario", "Seminario"]], class: "form-control form-control-sm" %>
+      <%= form.select :category, [["Clase", "Clase"], ["Taller", "Taller"], ["Seminario", "Seminario"]], class: "form-control form-control-sm" %>
     </div>
 
     <div class="mb-3">
@@ -38,8 +38,13 @@
       <%= form.text_field :place, class: "form-control form-control-sm" %>
     </div>
 
+    <div class="mb-3">
+      <b><%= form.label "Imagenes:", class: "form-label" %></b><br />
+      <%= form.file_field :images, multiple: true, class: "form-control form-control-sm" %>
+    </div>
+
     <div class="d-flex flex-row justify-content-end mt-3">
-      <%= form.submit class: 'btn btn-outline-primary' %>
+      <%= form.submit class: 'btn btn-outline-primary py-0' %>
     </div>
   </div>
 <% end %>
