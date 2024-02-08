@@ -9,3 +9,6 @@ application.register("admin-sidebar", AdminSidebarController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MediaUploadController from "./media_upload_controller"
+application.register("media-upload", MediaUploadController)

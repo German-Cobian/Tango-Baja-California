@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, admin_medium]) do |form| %>
+<%= form_with(model: [:admin, admin_medium], data: { controller: "media-upload" }) do |form| %>
   <% if admin_medium.errors.any? %>
     <div style="color: red" class="ms-5">
       <h6><%= pluralize(admin_medium.errors.count, "error") %> ha impedido que esta actividad se guarde:</h6>
@@ -28,14 +28,18 @@
       <%= form.text_area :description, size: "100x4", class: "form-control form-control-sm" %>
     </div>
 
-    <div class="mb-3">
-      <b><%= form.label "Foto:", class: "form-label" %></b><br />
-      <%= form.file_field :image, class: "form-control form-control-sm" %>
-    </div>
+    <div class="border border-dark rounded pt-2 px-5">
+      <p class="text-danger">Seleccione ya sea Foto o Video</p>
 
-    <div class="mb-3">
-      <b><%= form.label "Video", class: "form-label" %></b><br />
-      <%= form.file_field :file, class: "form-control form-control-sm"  %>
+      <div class="mb-3">
+        <b><%= form.label "Foto:", class: "form-label" %></b><br />
+        <%= form.file_field :image, data: { target: "media-upload.photographInput" }, class: "form-control form-control-sm" %>
+      </div>
+
+      <div class="mb-3">
+        <b><%= form.label "Video", class: "form-label" %></b><br />
+        <%= form.file_field :file, data: { target: "media-upload.videoInput" }, class: "form-control form-control-sm"  %>
+      </div>
     </div>
 
     <div class="d-flex flex-row justify-content-end mt-3">
