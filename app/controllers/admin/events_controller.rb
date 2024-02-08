@@ -25,7 +25,7 @@ class Admin::EventsController < AdminController
 
     respond_to do |format|
       if @admin_event.save
-        format.html { redirect_to admin_event_url(@admin_event), notice: "Event was successfully created." }
+        format.html { redirect_to admin_event_url(@admin_event), notice: "El Evento ha sido creado." }
         format.json { render :show, status: :created, location: @admin_event }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admin::EventsController < AdminController
   def update
     respond_to do |format|
       if @admin_event.update(admin_event_params)
-        format.html { redirect_to admin_event_url(@admin_event), notice: "Event was successfully updated." }
+        format.html { redirect_to admin_event_url(@admin_event), notice: "El Evento ha sido modificado." }
         format.json { render :show, status: :ok, location: @admin_event }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class Admin::EventsController < AdminController
     @admin_event.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_events_url, notice: "Event was successfully destroyed." }
+      format.html { redirect_to admin_events_url, notice: "El Evento ha sido eliminado." }
       format.json { head :no_content }
     end
   end

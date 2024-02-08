@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag 'admin_events' %>
 
-<h1>Events</h1>
+<p style="color: green" class="ms-5"><%= notice %></p>
 
-<div id="admin_events">
+<div class="d-flex flex-row justify-content-between mt-3 mx-5">
+  <h3>Eventos</h3>
+  <div>
+    <%= link_to "Crea un Evento", new_admin_event_path, class: "btn btn-outline-primary py-0" %>
+  </div>
+</div>
+
+<div id="admin_events" class="d-flex flex-wrap mx-5">
   <% @admin_events.each do |admin_event| %>
-    <%= render admin_event %>
-    <p>
-      <%= link_to "Show this event", admin_event %>
-    </p>
+    <div class="event-container border border-dark rounded my-2 mx-2 py-5 px-5">
+      <%= render admin_event %>
+      <div class="d-flex flex-row justify-content-end">
+        <%= link_to "Mas", admin_event_path(admin_event.id) %>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New event", new_admin_event_path %>

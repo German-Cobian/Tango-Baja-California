@@ -1,32 +1,26 @@
 <div id="<%= dom_id event %>">
   <p>
-    <strong>Title:</strong>
-    <%= event.title %>
+    <strong><%= event.title %></strong>
   </p>
 
   <p>
-    <strong>Description:</strong>
     <%= event.description %>
   </p>
 
   <p>
-    <strong>Hosted by:</strong>
+    <strong>Hospiciado por:</strong>
     <%= event.hosted_by %>
   </p>
 
-  <p>
-    <strong>Start time:</strong>
-    <%= event.start_time %>
-  </p>
+  <div class="d-flex flex-row">
+    <%= image_tag "calendar.png", height:"20", width: "20", class: "mt-1 me-3" %>
+    <p class="me-3"><%= event.start_time %></p> |
+    <p class="ms-3"><%= event.start_time %></p>
+  </div>
 
-  <p>
-    <strong>End time:</strong>
-    <%= event.end_time %>
-  </p>
-
-  <p>
-    <strong>Place:</strong>
-    <%= event.place %>
-  </p>
+  <div class="d-flex flex-row">
+    <%= image_tag "location.png", height:"20", width: "20", class: "mt-1 me-3" %>
+    <p><%= event.place %></p>
+  </div>
 
 </div>
