@@ -98,3 +98,35 @@ Medium.create(
   aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
   album_id: 3,
 ).image.attach(io: File.open('app/assets/images/feet5.jpeg'), filename: 'feet5.jpeg')
+
+Event.create(
+  title: 'Milonga del Angel', 
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  hosted_by: 'Tango Baja California',
+  start_time: '16 Nov 2024 18:20:49.262680000',
+  end_time: '19 Nov 2024 09:20:49.262680000',
+  place: 'Centro Cultural Tijuana',
+)
+Event.create(
+  title: 'Como Bailar Como Un Gaucho', 
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  hosted_by: 'Tango Sin Fronteras',
+  start_time: '09 Sept 2024 12:20:49.262680000',
+  end_time: '16 Sept 2024 18:20:49.262680000',
+  place: 'Casa de Cultura, Altamira',
+)
+
+Event.create(
+  title: 'Presentacion Grupo Juanetes', 
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  hosted_by: 'Milonga Cascabelito',
+  start_time: '07 Aug 2024 21:20:49.262680000',
+  end_time: '09 Aug 2024 12:20:49.262680000',
+  place: 'Estudios Morocha',
+)
