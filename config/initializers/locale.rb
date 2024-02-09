@@ -1,6 +1,6 @@
 module Locale
 
-# Define Spanish month names
+# Define Spanish month names (small caps)
 SPANISH_MONTHS = {
   "January" => "enero",
   "February" => "febrero",
@@ -14,6 +14,22 @@ SPANISH_MONTHS = {
   "October" => "octubre",
   "November" => "noviembre",
   "December" => "diciembre"
+}
+
+# Define Spanish month names (capitalized)
+SPANISH_MONTHS_C = {
+  "January" => "Enero",
+  "February" => "Febrero",
+  "March" => "Marzo",
+  "April" => "Abril",
+  "May" => "Mayo",
+  "June" => "Junio",
+  "July" => "Julio",
+  "August" => "Agosto",
+  "September" => "Septiembre",
+  "October" => "Octubre",
+  "November" => "Noviembre",
+  "December" => "Diciembre"
 }
 
 # Define Spanish day names

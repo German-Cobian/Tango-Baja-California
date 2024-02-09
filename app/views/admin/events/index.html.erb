@@ -3,7 +3,7 @@
 <p style="color: green" class="ms-5"><%= notice %></p>
 
 <div class="border border-dark rounded text-center my-5">
-  <h3 class="mt-3">Calendario</h3>
+  <h3 class="mt-3">Calendario de Eventos</h3>
   <%= month_calendar(events: @admin_events) do |date, events| %>
     <div class="day">
       <%= date.day %>
@@ -36,6 +36,3 @@
     </div>
   <% end %>
 </div>
-
-
-
