@@ -7,10 +7,9 @@
     <%= button_to "Elimina esta Actividad", admin_activity_path(@admin_activity.id), method: :delete, class: 'btn btn-outline-danger py-0' %>
   </div>
 
-  <div>
-    <div class="d-flex flex-row mb-3">
-      <%= link_to "Edita esta Actividad", edit_admin_activity_path(@admin_activity), class: 'me-3' %> |
-      <%= link_to "Listado de Actividades", admin_activities_path, class: 'ms-3' %>
-    </div>
+  <div class="d-flex flex-row mb-3">
+    <%= link_to "Edita esta Actividad", edit_admin_activity_path(@admin_activity), class: 'me-3' %> |
+    <%= link_to "Listado de Actividades", admin_activities_path, class: 'ms-3' %>
+  </div>
    
 </div>

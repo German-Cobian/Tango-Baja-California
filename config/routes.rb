@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   resources :activities, only: [:index, :show]
+  resources :articles, only: [:index, :show]
 end
