@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   resources :activities, only: [:index, :show]
   resources :articles, only: [:index, :show]
+  resources :albums, only: [:index, :show]
+  resources :media, only: [:show]
 end

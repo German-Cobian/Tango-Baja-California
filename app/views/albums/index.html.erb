@@ -1,0 +1,18 @@
+<div class="mt-3 mx-5">
+  <h3>Galerias</h3>
+</div>
+
+<div class="my-5 mx-5">
+  <div class="d-flex flex-wrap justify-content-between" >
+    <% @albums.each do |album| %>
+      <div class="album-container d-flex flex-column align-items-center border border-dark rounded mt-3 me-3 px-3">
+        <div>
+          <h6 class="mt-3"><%= link_to album.topic, album_path(album.id) %></h6>
+        </div>
+        <div class="my-3 mx-2">
+          <small><%= album.description %></small>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
