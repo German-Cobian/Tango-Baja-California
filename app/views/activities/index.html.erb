@@ -1,0 +1,11 @@
+<div id="activities" class="d-flex flex-wrap mx-5">
+  <% @activities.each do |activity| %>
+    <div class="event-container border border-dark rounded my-2 mx-2 py-5 px-5">
+      <%= render activity %>
+      
+      <div class="d-flex flex-row justify-content-end">
+        <%= link_to "Mas", activity_path(activity.id) %>
+      </div>
+    </div>
+  <% end %>
+</div>

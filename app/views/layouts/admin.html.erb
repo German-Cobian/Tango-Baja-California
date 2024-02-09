@@ -10,16 +10,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body data-controller="admin-sidebar">
+  <body data-controller="sidebar">
     <div>
       <!-- Sidebar -->
-      <div class="sidebar" data-target="admin-sidebar.sidebar">
+      <div class="sidebar" data-target="sidebar.sidebar">
         <%= render 'shared/admin_sidebar' %>
       </div>
 
       <!-- Toggle Button -->
       <div class="divtoggleBtn">
-        <button class="toggleButton btn btn-outline-primary border border-primary" data-target="admin-sidebar.toggleButton">></button>
+        <button class="toggleButton btn btn-outline-primary border border-primary" data-target="sidebar.toggleButton">></button>
       </div>
 
       <!-- Page content -->

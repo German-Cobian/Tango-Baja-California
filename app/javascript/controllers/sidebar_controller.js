@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="admin-sidebar"
+// Connects to data-controller="sidebar"
 export default class extends Controller {
   static targets = ["sidebar", "toggleButton"];
 

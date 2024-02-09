@@ -18,4 +18,5 @@ Rails.application.routes.draw do
     resources :events
   end
 
+  resources :activities, only: [:index, :show]
 end
