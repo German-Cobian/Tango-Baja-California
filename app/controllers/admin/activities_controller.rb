@@ -8,6 +8,7 @@ class Admin::ActivitiesController < AdminController
 
   # GET /admin/activities/1 or /admin/activities/1.json
   def show
+    @admin_activity = Activity.find(params[:id])
   end
 
   # GET /admin/activities/new

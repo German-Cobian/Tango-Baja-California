@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
-  root "home#index"
+  # Admin routes
 
-  authenticated :admin_user do
+  devise_for :admins
+
+  authenticated :admin do
     root to: "admin#index", as: :admin_root
   end
 
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
     resources :media
     resources :events
   end
+
+  # Regular user routes
+
+  root "home#index"
 
   resources :activities, only: [:index, :show]
   resources :articles, only: [:index, :show]

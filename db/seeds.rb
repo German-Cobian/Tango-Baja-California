@@ -1,5 +1,10 @@
 puts "Seeding..."
 
+Admin.create(
+  email: 'boss@gmail.com',
+  password: 'boss123',
+  )
+
 Activity.create(
   category: 'Clase',
   title: 'Principiantes',

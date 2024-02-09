@@ -1,11 +1,19 @@
 <aside class="container">
-  <%= image_tag "school-logo.png", width: "100", class: "rounded ms-2 mb-5" %>
-  <ul>
-    <li class="text-white my-3"><small>Nosotros</small></li>
-    <li class="text-white mb-3"><%= link_to "Actividades", admin_activities_path, class: "text-white link-style" %></li>
-    <li class="text-white mb-3"><%= link_to "Publicaciones", admin_articles_path, class: "text-white link-style" %></li>
-    <li class="text-white mb-3"><%= link_to "Galerias", admin_albums_path, class: "text-white link-style" %></li>
-    <li class="text-white mb-3"><%= link_to "Eventos", admin_events_path, class: "text-white link-style" %></li>
-    <li class="text-white mb-3"><small>Tienda</small></li>
-  </ul>
+
+  <div class="d-flex flex-row">   
+    <div class="logo-style border border-danger rounded mb-5 ms-3 me-2">
+      <%= image_tag "school-logo.png", width: "100", class: "logo-style py-4 rounded" %>
+    </div>
+    <p class="text-white">*</p>
+  </div>
+
+  <div class="d-flex flex-column ms-3">
+    <p class="text-white mb-4">Nosotros</p>
+    <%= link_to "Actividades", admin_activities_path, class: "text-white link-style mb-4" %>
+    <%= link_to "Publicaciones", admin_articles_path, class: "text-white link-style mb-4" %>
+    <%= link_to "Galerias", admin_albums_path, class: "text-white link-style mb-4" %>
+    <%= link_to "Eventos", admin_events_path, class: "text-white link-style mb-4" %>
+    <p class="text-white link-style">Tienda</p>
+    <%= link_to "Salir >", destroy_admin_session_path, data: { "turbo-method": :delete}, class: "text-white link-style" %>
+  </div>
 </aside>

@@ -1,7 +1,23 @@
 <p style="color: green" class="ms-5"><%= notice %></p>
 
 <div class="border border-dark rounded my-3 mx-5 py-5 px-5">
-  <%= render @admin_article %>
+
+  <div class="mb-5">
+
+    <div class="d-flex flex-column align-items-center mb-3">
+      <p class="row mb-3">
+        <strong><%= @admin_article.title %></strong>
+      </p>
+      <div class="row">
+        <%= @admin_article.images.any? ? image_tag(@admin_article.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+      </div>
+    </div>
+
+    <p>
+      <%= @admin_article.text %>
+    </p>
+
+  </div>
 
   <div class="d-flex flex-row justify-content-end mb-3">
     <%= button_to "Elimina esta Publicacion", admin_article_path(@admin_article.id), method: :delete, class: 'btn btn-outline-danger py-0' %>
