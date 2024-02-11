@@ -10,7 +10,7 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Miscelanea' %>
-            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-5 px-5">
               <%= render article %>
             <p class="d-flex flex-row justify-content-end">
               <%= link_to "Mas", article_path(article.id) %>
@@ -24,7 +24,7 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Historia del Tango' %>
-            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-5 px-5">
               <%= render article %>
               <p class="d-flex flex-row justify-content-end">
                 <%= link_to "Mas", article_path(article.id) %>
@@ -38,7 +38,7 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Tecnica' %>
-            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-5 px-5">
               <%= render article %>
               <p class="d-flex flex-row justify-content-end">
                 <%= link_to "Mas", article_path(article.id) %>

@@ -1,11 +1,16 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import 'home';
 @import 'admin';
 @import 'admin_sidebar';
 @import 'admin_activities';
 @import 'admin_articles';
 @import 'admin_albums';
 @import 'admin_events';
+
+.body {
+  background-color: black;
+}
 
 .simple-calendar {
   .day {}

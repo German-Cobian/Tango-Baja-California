@@ -1,62 +1,66 @@
 <aside class="container">
 
-  <div class="border border-danger rounded bg-light mt-3">
+  <div class="d-flex flex-row rounded mt-5 me-3">
 
-    <div class="d-flex flex-row mt-5">
-
-      <div class="logo-style border border-danger rounded mb-5 ms-3 me-2">
-        <%= image_tag "school-logo.png", width: "100", class: "logo-style py-4 rounded" %>
-      </div>
-
-      <div class="d-flex flex-column align-items-end mb-3">
-
-        <div>
-          <%= link_to "https://wa.me/526647556441", target: "_blank" do %>
-            <%= image_tag "whatsapp.png", height: "20", width: "20", class: 'rounded me-2', alt: "WhatsApp" %>
-          <% end %>
-        </div>
-
-        <div>
-          <%= link_to "mailto:tangobajacalifornia@gmail.com", target: "_blank" do %>
-            <%= image_tag asset_path("envelope.png"), height: "20", width: "20", class: 'rounded me-2', alt: "Email" %>
-          <% end %>
-        </div>
-        
-        <div>
-          <%= link_to "https://www.facebook.com/TangoBajaCalifornia", target: "_blank" do %>
-            <%= image_tag "facebook.png", height: "20", width: "20", class: 'rounded me-2', alt: "Facebook" %>
-          <% end %>
-        </div>
-
-        <div>
-          <%= link_to "https://www.instagram.com/tangobajacalifornia/", target: "_blank" do %>
-            <%= image_tag "instagram.png", height: "20", width: "20", class: 'rounded me-2', alt: "Instagram" %>
-          <% end %>
-        </div>
-
-        <div>
-          <%= link_to "https://gacetatango.blogspot.com/", target: "_blank" do %>
-            <%= image_tag "global-grid.png", height: "20", width: "20", class: 'rounded me-2', alt: "World-wide-web" %>
-          <% end %>
-        </div>
-
-      </div>
+    <div class="logo-style border border-danger mb-5 ms-3 me-2">
+      <%= image_tag "school-logo.png", width: "100", class: "logo-style py-4 rounded" %>
     </div>
 
+    <div class="d-flex flex-column align-items-end mb-3">
+
+      <div>
+        <%= link_to "https://wa.me/526647556441", target: "_blank" do %>
+          <%= image_tag "whatsapp.png", height: "27", width: "27", class: 'me-2', alt: "WhatsApp" %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= link_to "mailto:tangobajacalifornia@gmail.com", target: "_blank" do %>
+          <%= image_tag asset_path("envelope.png"), height: "25", width: "25", class: 'rounded me-2', alt: "Email" %>
+        <% end %>
+      </div>
+      
+      <div>
+        <%= link_to "https://www.facebook.com/TangoBajaCalifornia", target: "_blank" do %>
+          <%= image_tag "facebook.png", height: "25", width: "25", class: 'me-2', alt: "Facebook" %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= link_to "https://www.instagram.com/tangobajacalifornia/", target: "_blank" do %>
+          <%= image_tag "instagram.png", height: "20", width: "25", class: 'mb-1 me-2', alt: "Instagram" %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= link_to "https://gacetatango.blogspot.com/", target: "_blank" do %>
+          <%= image_tag "global-grid.png", height: "22", width: "22", class: 'me-2', alt: "World-wide-web" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mt-3">
+  
     <div class="d-flex flex-column my-5 ms-5">
-      <p class="text-danger mb-2">Nosotros</p>
-      <%= link_to "Actividades", admin_activities_path, class: "text-danger link-style mb-2" %>
-      <%= link_to "Publicaciones", admin_articles_path, class: "text-danger link-style mb-2" %>
-      <%= link_to "Galerias", admin_albums_path, class: "text-danger link-style mb-2" %>
-      <%= link_to "Eventos", admin_events_path, class: "text-danger link-style mb-2" %>
-      <p class="text-danger link-style mb-2">Tienda</p>
-      <%= link_to "Salir >", destroy_admin_session_path, data: { "turbo-method": :delete}, class: "text-danger link-style" %>
+      <div class="mb-4">
+        <%= link_to root_path, method: :get do %>
+          <%= image_tag "home.png", height: "22", width: "22", class: 'rounded', alt: "Home" %>
+        <% end %>
+      </div>
+      <%= link_to "Actividades", admin_activities_path, class: "text-white link-style mb-2" %>
+      <%= link_to "Publicaciones", admin_articles_path, class: "text-white link-style mb-2" %>
+      <%= link_to "Galerias", admin_albums_path, class: "text-white link-style mb-2" %>
+      <%= link_to "Eventos", admin_events_path, class: "text-white link-style mb-2" %>
+      <p class="text-white link-style mb-2">Tienda</p>
+      <%= link_to "Salir >", destroy_admin_session_path, data: { "turbo-method": :delete}, class: "text-white link-style" %>
     </div>
 
     <div class="d-flex flex-row justify-content-end me-3">
       <div class="d-flex flex-wrap">
         <%= image_tag "phone.png", height: "20", width: "20", class: 'rounded me-2', alt: "Telephone" %>
-        <p class="txt-phone"><small>663 115 3686</small><p>
+        <p class="txt-phone text-white"><small>663 115 3686</small><p>
       </div>
     </div>
 
