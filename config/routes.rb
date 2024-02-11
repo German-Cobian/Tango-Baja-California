@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :albums
     resources :media
     resources :events
+    resources :schools, only: [ :edit, :update]
   end
 
   # Regular user routes

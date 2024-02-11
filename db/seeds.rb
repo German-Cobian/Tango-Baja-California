@@ -5,6 +5,23 @@ Admin.create(
   password: 'boss123',
   )
 
+School.create(
+  description: 'Lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel, eam iriure theophrastus id. Te mel simul 
+  aliquip consequuntur, mundi partiendo ad nam. Id usu epicuri accommodare...',
+  bio_jose: 'Jose lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel.',
+  bio_cris: 'Cristina lorem ipsum dolor sit amet, mel mutat facete eu, vel brute mnesarchum 
+  neglegentur te. Eu sale verear nominavi mel.',
+  phone: '663 115 3686',
+  email: 'https://www.instagram.com/tangobajacalifornia/',
+  whatsapp: 'https://wa.me/526647556441',
+  facebook: 'https://www.facebook.com/TangoBajaCalifornia',
+  instagram: 'https://www.instagram.com/tangobajacalifornia/',
+  webpage: 'https://gacetatango.blogspot.com/',
+)
+
+
 Activity.create(
   category: 'Clase',
   title: 'Principiantes',
