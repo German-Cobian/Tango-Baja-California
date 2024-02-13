@@ -11,27 +11,31 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :customer_email, style: "display: block" %>
-    <%= form.text_field :customer_email %>
-  </div>
+  <div class="border border-danger rounded mx-5 py-5 px-5">
 
-  <div>
-    <%= form.label :customer_address, style: "display: block" %>
-    <%= form.text_field :customer_address %>
-  </div>
+    <div class="mb-3">
+      <%= form.label "Email del Cliente:", class: "form-label" %>
+      <%= form.text_field :customer_email, class: "form-control form-control-sm" %>
+    </div>
 
-  <div>
-    <%= form.label :total, style: "display: block" %>
-    <%= form.number_field :total %>
-  </div>
+    <div class="mb-3">
+      <%= form.label "Direccion del Cliente:", class: "form-label" %>
+      <%= form.text_field :customer_address, class: "form-control form-control-sm" %>
+    </div>
 
-  <div>
-    <%= form.label :fulfilled, style: "display: block" %>
-    <%= form.check_box :fulfilled %>
-  </div>
+    <div class="mb-3">
+      <%= form.label "Total:", class: "form-label" %>
+      <%= form.number_field :total, class: "form-control form-control-sm" %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="mb-3">
+      <%= form.label "Procesada (?):", class: "form-label" %>
+      <%= form.check_box :fulfilled %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+
   </div>
 <% end %>

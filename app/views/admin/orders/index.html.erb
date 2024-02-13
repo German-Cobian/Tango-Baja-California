@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="ms-5"><%= notice %></p>
 
-<h1>Orders</h1>
-
-<div id="admin_orders">
-  <% @admin_orders.each do |admin_order| %>
-    <%= render admin_order %>
-    <p>
-      <%= link_to "Show this order", admin_order_path(admin_order.id) %>
-    </p>
-  <% end %>
+<div class="d-flex flex-row justify-content-between mt-3 mx-5">
+  <h3 class="ms-5">Ordenes</h3>
+  <div>
+    <%= link_to "Crea Una Orden", new_admin_order_path, class: "btn btn-outline-primary py-0" %>
+  </div>
 </div>
 
-<%= link_to "New order", new_admin_order_path %>
+<div class="my-5 mx-5">
+
+  <div id="admin_products">
+    <ul class="d-flex flex-wrap">
+      <% @admin_orders.each do |admin_order| %>
+        <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
+          <p class="d-flex flex-row justify-content-end">
+            <%= link_to ">>", admin_order_path(admin_order.id), class: 'link-style' %>
+          </p>
+          <%= render admin_order %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

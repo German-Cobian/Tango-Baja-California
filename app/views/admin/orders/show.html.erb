@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="ms-5"><%= notice %></p>
 
-<%= render @admin_order %>
+<div class="border border-danger rounded my-3 mx-5 py-3 px-5">
 
-<div>
-  <%= link_to "Edit this order", edit_admin_order_path(@admin_order) %> |
-  <%= link_to "Back to orders", admin_orders_path %>
+  <div class="d-flex flex-row justify-content-between mb-5">
+    <div class="me-5">
+      <%= link_to "<<", admin_orders_path, class: 'link-style' %>
+    </div>
+    <div class="d-flex flex-row">
+      <%= link_to "Edita esta Orden", edit_admin_order_path(@admin_order), class: 'link-style me-3' %> |
+      <%= button_to "Elimina esta Orden", admin_order_path(@admin_order.id), method: :delete, class: 'btn btn-outline-danger py-0 ms-3' %>
+    </div>
+  </div>
 
-  <%= button_to "Destroy this order", admin_order_path(@admin_order.id), method: :delete %>
+  <div class="mb-5">
+    <%= render @admin_order %>
+  </div>
+
 </div>

@@ -1,3 +1,7 @@
+<div class="mt-3 ms-5">
+  <%= link_to "<<", admin_root_path, class: "link-style" %>
+</div>
+
 <h3 class="mt-3 ms-5">Edita Esta Informacion</h3>
 
 <%= form_with(model: [:admin, @admin_school]) do |form| %>
@@ -50,9 +54,3 @@
     </div>
   </div>
 <% end %>
-
-<br>
-
-<div class="d-flex flex-row mb-3 ms-5">
-  <%= link_to "<<", admin_root_path, class: "link-style" %>
-</div>
