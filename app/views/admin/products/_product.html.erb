@@ -1,4 +1,13 @@
 <div id="<%= dom_id product %>">
+
+  <% if product.images.any? %>
+    <div class="d-flex flex-wrap mb-3">
+      <% product.images.each do |image| %>
+        <%= image_tag(image, height: 150, width: 150, class: "rounded me-2 mb-2") %>
+      <% end %>
+    </div>
+  <% end %>
+
   <p>
     <strong>Name:</strong>
     <%= product.name %>

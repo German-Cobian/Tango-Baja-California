@@ -17,8 +17,14 @@
       <p class="mb-3">
         <strong><%= @admin_activity.title %></strong>
       </p>
-      <div>
-        <%= @admin_activity.images.any? ? image_tag(@admin_activity.images.first, height: 150, width: 150) : image_tag("https://via.placeholder.com/150")%>
+      <div class="row">
+        <% if @admin_activity.images.any? %>
+          <div class="d-flex flex-wrap mb-3">
+            <% @admin_activity.images.each do |image| %>
+              <%= image_tag(image, height: 150, width: 150, class: "rounded me-2 mb-2") %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
 

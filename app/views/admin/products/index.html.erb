@@ -1,25 +1,35 @@
 <p style="color: green" class="ms-5"><%= notice %></p>
 
-<div class="d-flex flex-row justify-content-between mt-3 mx-5">
+<div class="d-flex flex-row justify-content-between my-3 me-5">
   <h3 class="ms-5">Productos</h3>
   <div>
     <%= link_to "Crea Un Producto", new_admin_product_path, class: "btn btn-outline-primary py-0" %>
   </div>
 </div>
 
-<div class="my-5 mx-5">
-
-  <div id="admin_products">
-    <ul class="d-flex flex-wrap">
-      <% @admin_products.each do |admin_product| %>
-        <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
-          <p class="d-flex flex-row justify-content-end">
-            <%= link_to ">>", admin_product_path(admin_product.id), class: 'link-style' %>
-          </p>
-          <%= render admin_product %>
-        </li>
-      <% end %>
-    </ul>
+<div id="admin_products">
+  <div class="mx-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @admin_products.each do |p| %>
+          <tr>
+            <td><%= p.images.any? ? image_tag(p.images.first, height: 50, width: 50) : image_tag("https://via.placeholder.com/50")%></td>
+            <td><%= link_to p.name, admin_product_path(p.id), class: 'link-style' %></td>
+            <td><%= p.description %></td>
+            <td>$ <%= (p.price/100.0).to_s %></td>
+            </div>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-
 </div>
+

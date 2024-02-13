@@ -31,6 +31,11 @@
       <div class="d-flex flex-row justify-content-end mb-3">
         <%= link_to ">>", admin_event_path(event.id), class: 'link-style' %>
       </div>
+      <div class="row">
+        <% if event.image.attached? %>
+          <%= image_tag event.image, height: 200, width: 200, class: ""  %>
+        <% end %>
+      </div>
       <%= render event %>
     </div>
   <% end %>

@@ -35,6 +35,11 @@
     </div>
 
     <div class="mb-3">
+      <b><%= form.label "Imagenes:", class: "form-label" %></b><br />
+      <%= form.file_field :images, multiple: true, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
       <%= form.label "Active (?):", class: "form-label" %>
       <%= form.check_box :active %>
     </div>
