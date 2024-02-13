@@ -1,0 +1,50 @@
+<%= form_with(model: [:admin, admin_medium], data: { controller: "media-upload" }) do |form| %>
+  <% if admin_medium.errors.any? %>
+    <div style="color: red" class="ms-5">
+      <h6><%= pluralize(admin_medium.errors.count, "error") %> ha impedido que esta actividad se guarde:</h6>
+
+      <ul>
+        <% admin_medium.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="border border-danger rounded mx-5 py-5 px-5">
+
+    <div class="d-flex flex-row mb-3">
+      <b class="pe-4"><%= form.label "Album", class: "form-label" %></b><br />
+      <%= form.collection_select :album_id, Album.order(:id), :id, :topic, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Titulo:", class: "form-label" %></b><br />
+      <%= form.text_field :title, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Descripcion:", class: "form-label" %></b><br />
+      <%= form.text_area :description, size: "100x4", class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="border border-danger rounded pt-2 px-5">
+      <p class="text-danger">Seleccione ya sea Foto o Video</p>
+
+      <div class="mb-3">
+        <b><%= form.label "Foto:", class: "form-label" %></b><br />
+        <%= form.file_field :image, data: { target: "media-upload.photographInput" }, class: "form-control form-control-sm" %>
+      </div>
+
+      <div class="mb-3">
+        <b><%= form.label "Video", class: "form-label" %></b><br />
+        <%= form.file_field :file, data: { target: "media-upload.videoInput" }, class: "form-control form-control-sm"  %>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-end mt-3">
+      <%= form.submit class: 'btn btn-outline-primary py-0' %>
+    </div>
+  </div>
+<% end %>
+

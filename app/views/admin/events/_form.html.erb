@@ -1,0 +1,51 @@
+<%= form_with(model: [:admin, admin_event]) do |form| %>
+  
+  <% if admin_event.errors.any? %>
+    <div style="color: red" class="ms-5">
+      <h6><%= pluralize(admin_event.errors.count, "error") %> ha impedido que este evento se guarde:</h6>
+
+      <ul>
+        <% admin_event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="border border-danger rounded mx-5 py-5 px-5">
+
+    <div class="mb-3">
+      <b><%= form.label "Titulo:", class: "form-label" %></b><br />
+      <%= form.text_field :title, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Descripcion:", class: "form-label" %></b><br />
+      <%= form.text_area :description, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Hospicia:", class: "form-label" %></b><br />
+      <%= form.text_field :hosted_by, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Inicia:", class: "form-label" %></b><br />
+      <%= form.datetime_field :start_time, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Termina:", class: "form-label" %></b><br />
+      <%= form.datetime_field :end_time, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Lugar:", class: "form-label" %></b><br />
+      <%= form.text_field :place, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="d-flex flex-row justify-content-end mt-3">
+      <%= form.submit class: "btn btn-outline-primary py-0" %>
+    </div>
+  </div>
+<% end %>
