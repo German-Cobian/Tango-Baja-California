@@ -2,7 +2,17 @@
 
 <p style="color: green" class="ms-5"><%= notice %></p>
 
-<div class="my-3 mx-5">
+<div class="border border-danger rounded my-3 me-3 py-3 px-5">
+
+  <div class="d-flex flex-row justify-content-between mb-5">
+    <div class="me-5">
+      <%= link_to "<<", admin_albums_path, class: 'link-style' %>
+    </div>
+    <div class="d-flex flex-row">
+      <%= link_to "Edita este Album", edit_admin_album_path(@admin_album), class: 'link-style me-3' %> |
+      <%= button_to "Elimina este Album", admin_album_path(@admin_album.id), method: :delete, class: 'btn btn-outline-danger py-0 ms-3' %>
+    </div>
+  </div>
 
   <div class="d-flex flex-row justify-content-between">
     <div class="w-75">
@@ -10,15 +20,19 @@
       <p><%= @admin_album.description %></p>
     </div>
     <div>
-      <%= link_to "Agrega Un Elemento", new_admin_medium_path(album_id: @admin_album.id), class: "btn btn-outline-primary py-0" %>
+      <%= link_to "Agrega Contenido", new_admin_medium_path(album_id: @admin_album.id), class: "btn btn-outline-primary py-0" %>
     </div>
   </div>
 
   <div class="d-flex flex-wrap justify-content-start">
     <% @media.order('created_at DESC').each do |medium|%>
-      <div class="album-container d-flex flex-column flex-lg-row border border-danger rounded mt-3 me-3">
+      <div class="album-container d-flex flex-column border border-danger rounded mt-3 me-3">
         <div class="my-3 mx-3">
+          <p class="d-flex flex-row justify-content-end">
+            <%= link_to '>>', admin_medium_path(medium), class: 'link-style' %>
+          </p> 
           <div class="d-flex flex-column align-items-center mb-5">
+            <h6 class="mb-3"><b><%= medium.title %></b></h6>
             <div class="row">
               <% if medium.image.attached? %>
                 <%= image_tag medium.image, height: 200, width: 200, class: ""  %>
@@ -36,22 +50,14 @@
               <% end %>
             </div>
           </div>
-          <h6><b><%= medium.title %></b></h6>
           <p><%= truncate medium.description, length: 100 %></p>
-          <p class="d-flex flex-row justify-content-end">
-            <%= link_to 'Mas', admin_medium_path(medium) %>
-          </p> 
         </div>
       </div>
     <% end %>
   </div>
   
-  <div class="d-flex flex-row justify-content-end my-3">
-    <%= button_to "Elimina este Album", admin_album_path(@admin_album.id), method: :delete, class: 'btn btn-outline-danger py-0' %>
-  </div>
-  <div class="d-flex flex-row">
-    <%= link_to "Edita el Album", edit_admin_album_path(@admin_album), class: 'me-3' %> |
-    <%= link_to "Listado de Albumes", admin_albums_path, class: 'ms-3' %>
-  </div>
+  
+  
 
 </div>
+

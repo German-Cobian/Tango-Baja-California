@@ -1,6 +1,16 @@
 <p style="color: green" class="ms-5"><%= notice %></p>
 
-<div class="border border-danger rounded my-3 mx-5 py-5 px-5">
+<div class="border border-danger rounded my-3 mx-5 py-3 px-5">
+
+  <div class="d-flex flex-row justify-content-between mb-5">
+    <div class="me-5">
+      <%= link_to "<<", admin_activities_path, class: "link-style" %>
+    </div>
+    <div class="d-flex flex-row">
+      <%= link_to "Edita esta Actividad", edit_admin_activity_path(@admin_activity), class: 'link-style me-3' %> |
+      <%= button_to "Elimina esta Actividad", admin_activity_path(@admin_activity.id), method: :delete, class: 'btn btn-outline-danger py-0 ms-3' %>
+    </div>
+  </div>
 
   <div>
     <div class="d-flex flex-column align-items-center mb-3">
@@ -28,13 +38,4 @@
 
   </div>
 
-  <div class="d-flex flex-row justify-content-end mb-3">
-    <%= button_to "Elimina esta Actividad", admin_activity_path(@admin_activity.id), method: :delete, class: 'btn btn-outline-danger py-0' %>
-  </div>
-
-  <div class="d-flex flex-row mb-3">
-    <%= link_to "Edita esta Actividad", edit_admin_activity_path(@admin_activity), class: 'me-3' %> |
-    <%= link_to "Listado de Actividades", admin_activities_path, class: 'ms-3' %>
-  </div>
-   
 </div>

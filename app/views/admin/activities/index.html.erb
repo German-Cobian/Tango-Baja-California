@@ -17,11 +17,11 @@
       <ul class="d-flex flex-wrap">
         <% activities.each do |activity| %>
           <% if activity.category == 'Clase' %>
-            <li class="activity-container d-flex flex-column border border-danger rounded my-2 mx-2 py-5 px-5">
+            <li class="activity-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
+              <p class="d-flex flex-row justify-content-end">
+                <%= link_to ">>", admin_activity_path(activity.id), class: "link-style" %>
+              </p>
               <%= render activity %>
-            <p class="d-flex flex-row justify-content-end">
-              <%= link_to "Mas", admin_activity_path(activity.id) %>
-            </p>
             </li>
           <% end %>
         <% end %>
@@ -31,11 +31,11 @@
       <ul class="d-flex flex-wrap">
         <% activities.each do |activity| %>
           <% if activity.category == 'Taller' %>
-            <li class="activity-container d-flex flex-column border border-danger rounded my-2 mx-2 py-5 px-5">
-              <%= render activity %>
+            <li class="activity-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
               <p class="d-flex flex-row justify-content-end">
-                <%= link_to "Mas", admin_activity_path(activity.id) %>
+                <%= link_to ">>", admin_activity_path(activity.id), class: "link-style" %>
               </p>
+              <%= render activity %>
             </li>
           <% end %>
         <% end %>
@@ -45,10 +45,10 @@
       <ul class="d-flex flex-wrap">
         <% activities.each do |activity| %>
           <% if activity.category == 'Seminario' %>
-            <li class="activity-container d-flex flex-column border border-danger rounded my-2 mx-2 py-5 px-5">
-              <%= render activity %>
+            <li class="activity-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
               <p class="d-flex flex-row justify-content-end">
-                <%= link_to "Mas", admin_activity_path(activity.id) %>
+                <%= link_to ">>", admin_activity_path(activity.id), class: "link-style" %>
+                <%= render activity %>
               </p>
             </li>
           <% end %>

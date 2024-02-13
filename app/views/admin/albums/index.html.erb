@@ -18,7 +18,7 @@
             <small><%= truncate album.description, lenght: 100 %></small>
           </div>
         <div class="d-flex flex-row justify-content-end">
-          <%= link_to "Mas", admin_album_path(album.id) %>
+          <%= link_to ">>", admin_album_path(album.id), class: 'link-style' %>
         </div>
       </div>
     <% end %>

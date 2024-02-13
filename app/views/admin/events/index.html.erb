@@ -22,17 +22,16 @@
         </div>
       </div>
     <% end %>
-
   <% end %>
 </div>
 
-<div id="admin_events" class="d-flex flex-wrap mx-5">
+<div id="admin_events" class="d-flex flex-wrap mb-5 mx-5">
   <% @admin_events.each do |event| %>
-    <div class="event-container border border-danger rounded my-2 mx-2 py-5 px-5">
-      <%= render event %>
-      <div class="d-flex flex-row justify-content-end">
-        <%= link_to "Mas", admin_event_path(event.id) %>
+    <div class="event-container border border-danger rounded my-2 mx-2 py-3 px-5">
+      <div class="d-flex flex-row justify-content-end mb-3">
+        <%= link_to ">>", admin_event_path(event.id), class: 'link-style' %>
       </div>
+      <%= render event %>
     </div>
   <% end %>
 </div>
