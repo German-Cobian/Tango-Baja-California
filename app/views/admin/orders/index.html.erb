@@ -6,7 +6,7 @@
   <% @admin_orders.each do |admin_order| %>
     <%= render admin_order %>
     <p>
-      <%= link_to "Show this order", admin_order %>
+      <%= link_to "Show this order", admin_order_path(admin_order.id) %>
     </p>
   <% end %>
 </div>
