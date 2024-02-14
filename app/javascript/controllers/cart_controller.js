@@ -21,7 +21,6 @@ export default class extends Controller {
       quantityEl.innerText = `Cantidad: ${item.quantity}`
       const deleteButton = document.createElement("button")
       deleteButton.innerText = "Sacar del Carro"
-      console.log("item.id: ", item.id)
       deleteButton.value = JSON.stringify({id: item.id})
       deleteButton.classList.add("btn", "btn-outline-danger", "mt-2", "mb-5", "py-0", )
       deleteButton.addEventListener("click", this.removeFromCart)
@@ -57,7 +56,6 @@ export default class extends Controller {
   }
 
   checkout() {
-    console.log("checkout")
     const cart = JSON.parse(localStorage.getItem("cart"))
     const payload = {
       authenticity_token: "",
@@ -81,7 +79,7 @@ export default class extends Controller {
         } else {
           response.json().then(body => {
             const errorEl = document.createElement("div")
-            errorEl.innerText = `There was an error processing your order. ${body.error}`
+            errorEl.innerText = `Se dio un error en el procesamiento de su pedido. ${body.error}`
             let errorContainer = document.getElementById("errorContainer")
             errorContainer.appendChild(errorEl)
           })

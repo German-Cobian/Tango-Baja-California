@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   resources :products, only: [:index]
 
   get "cart" => "carts#show"
+  post "checkout" => "checkouts#create"
 end
