@@ -31,4 +31,5 @@ Rails.application.routes.draw do
   resources :albums, only: [:index, :show]
   resources :media, only: [:show]
   resources :events, only: [:index, :show]
+  resources :products, only: [:index]
 end
