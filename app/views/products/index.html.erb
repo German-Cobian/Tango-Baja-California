@@ -2,8 +2,8 @@
 
 <% @products.each do |product| %>
   <div data-controller="products" data-products-product-value="<%= product.to_json %>" class="">
-    <div class="">
-      <div class="d-flex flex-column align-items-center border border-danger rounded mb-3 mx-5 py-4 px-3">
+    <div class="border border-danger rounded mb-3 mx-5 py-4 px-3">
+      <div class="d-flex flex-column align-items-center">
         <div class="mb-3">
           <h3 class=""><%= product.name %></h3>
         
@@ -15,8 +15,20 @@
           <p class=""><%= product.description %></p>
           <p class="">$<%= (product.price/100.0).to_s %>
         </div>
-        <button data-action="click->products#addToCart" class="btn btn-outline-primary py-0">Add To Cart</button>
+      </div>
+      <div class="d-flex flex-row justify-content-around">
+        <div>
+          <button data-action="click->products#addToCart" class="btn btn-outline-primary py-0 mt-2">Agregar a Carro de Compras</button>
+        </div>
+        <div class="d-flex flex-row justify-content-end">
+          <%= link_to cart_path, method: :get do %>
+            <%= image_tag "shopping-cart.jpeg", height: "30", width: "55", class: 'rounded', alt: "Home" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 <% end %>
+
+
+

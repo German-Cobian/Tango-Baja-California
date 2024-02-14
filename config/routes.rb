@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   resources :media, only: [:show]
   resources :events, only: [:index, :show]
   resources :products, only: [:index]
+
+  get "cart" => "carts#show"
 end
