@@ -53,11 +53,23 @@
       <%= link_to "Publicaciones", admin_articles_path, class: "text-white link-style mb-2" %>
       <%= link_to "Galerias", admin_albums_path, class: "text-white link-style mb-2" %>
       <%= link_to "Eventos", admin_events_path, class: "text-white link-style mb-2" %>
-      <p class="text-white link-style mb-2">Tienda</p>
-      <%= link_to "Productos", admin_products_path, class: "text-white link-style mb-2" %>
-      <%= link_to "Ordenes", admin_orders_path, class: "text-white link-style mb-2" %>
-      <%= link_to "Salir >", destroy_admin_session_path, data: { "turbo-method": :delete}, class: "text-white link-style" %>
+      <div class="dropdown mb-3">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tienda
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="bg-dark">
+            <%= link_to('Productos', admin_products_path, class: "text-white link-style mb-2" ) %>
+          </div>
+          <div class="bg-dark">
+            <%= link_to('Pedidos', admin_orders_path, class: "text-white link-style mb-2" ) %>
+          </div>
+        </div>
+      </div>
+      <%= link_to "< Salir", destroy_admin_session_path, data: { "turbo-method": :delete}, class: "text-white link-style" %>
     </div>
 
   </div>
 </aside>
+
+
