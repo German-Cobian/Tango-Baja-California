@@ -15,7 +15,6 @@ class Admin::EventsTest < ApplicationSystemTestCase
     click_on "New event"
 
     fill_in "Description", with: @admin_event.description
-    fill_in "End time", with: @admin_event.end_time
     fill_in "Hosted by", with: @admin_event.hosted_by
     fill_in "Place", with: @admin_event.place
     fill_in "Start time", with: @admin_event.start_time
@@ -31,7 +30,6 @@ class Admin::EventsTest < ApplicationSystemTestCase
     click_on "Edit this event", match: :first
 
     fill_in "Description", with: @admin_event.description
-    fill_in "End time", with: @admin_event.end_time
     fill_in "Hosted by", with: @admin_event.hosted_by
     fill_in "Place", with: @admin_event.place
     fill_in "Start time", with: @admin_event.start_time

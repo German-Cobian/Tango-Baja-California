@@ -5,7 +5,6 @@ class CreateAdminEvents < ActiveRecord::Migration[7.0]
       t.text :description
       t.string :hosted_by
       t.datetime :start_time
-      t.datetime :end_time
       t.string :place
 
       t.timestamps

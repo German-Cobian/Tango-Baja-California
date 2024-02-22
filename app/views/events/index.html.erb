@@ -17,14 +17,3 @@
     <% end %>
   <% end %>
 </div>
-
-<div class="d-flex flex-wrap mx-5">
-  <% @events.each do |event| %>
-    <div class="event-container border border-danger rounded my-2 mx-2 py-3 px-5">
-      <div class="d-flex flex-row justify-content-end">
-        <%= link_to ">>", event_path(event.id), class: 'link-style' %>
-      </div>
-      <%= render event %>  
-    </div>
-  <% end %>
-</div>
