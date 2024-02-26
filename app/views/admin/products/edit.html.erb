@@ -20,17 +20,17 @@
   <div class="border border-danger rounded mx-5 py-5 px-5">
 
     <div class="mb-3">
-      <%= form.label :name, class: "form-label" %>
+      <%= form.label "Nombre:", class: "form-label" %>
       <%= form.text_field :name, class: "form-control form-control-sm" %>
     </div>
 
     <div class="mb-3">
-      <%= form.label "Description", class: "form-label" %>
+      <%= form.label "Descripcion:", class: "form-label" %>
       <%= form.text_area :description, class: "form-control form-control-sm" %>
     </div>
 
     <div class="mb-3">
-      <%= form.label "Price:", class: "form-label" %>
+      <%= form.label "Precio:", class: "form-label" %>
       <%= form.number_field :price, class: "form-control form-control-sm" %>
     </div>
 
@@ -40,7 +40,7 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label "Active (?):", class: "form-label" %>
+      <%= form.label "Activo (?):", class: "form-label" %>
       <%= form.check_box :active %>
     </div>
 

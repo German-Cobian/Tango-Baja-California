@@ -45,7 +45,7 @@
 
   <div class="d-flex flex-row justify-content-between mt-5">
     <p>
-      <strong>Total:</strong> $<%= order.total %>
+      <strong>Total:</strong> $<%= (order.total/100.0).to_s %>
     </p>
 
     <p>

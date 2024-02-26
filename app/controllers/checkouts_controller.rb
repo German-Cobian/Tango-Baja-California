@@ -14,7 +14,7 @@ class CheckoutsController < ApplicationController
             name: item["name"],
             metadata: { product_id: product.id } 
           },
-          currency: "usd",
+          currency: "mxn",
           unit_amount: item["price"].to_i
         }
       }
@@ -28,7 +28,7 @@ class CheckoutsController < ApplicationController
       success_url: "http://localhost:3000/success",
       cancel_url: "http://localhost:3000/cancel",
       shipping_address_collection: { 
-        allowed_countries: ['US', 'CA']
+        allowed_countries: ['MX']
       }
     )
     render json: { url: session.url }

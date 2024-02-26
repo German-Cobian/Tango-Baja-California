@@ -21,7 +21,7 @@
         <% if @admin_activity.images.any? %>
           <div class="d-flex flex-wrap mb-3">
             <% @admin_activity.images.each do |image| %>
-              <%= image_tag(image, height: 150, width: 150, class: "rounded me-2 mb-2") %>
+              <%= image_tag(image, height: 150, class: "rounded me-2 mb-2") %>
             <% end %>
           </div>
         <% end %>
@@ -32,15 +32,15 @@
       <%= @admin_activity.description %>
     </p>
 
-    <p>
-      <strong>Fecha/Horario:</strong>
-      <%= @admin_activity.time %>
-    </p>
+    <div class="d-flex flex-row">
+      <%= image_tag "calendar.png", height:"20", width: "20", class: "mt-1 me-3" %>
+      <p><%= @admin_activity.time %></p>
+    </div>
 
-    <p>
-      <strong>Lugar:</strong>
-      <%= @admin_activity.place %>
-    </p>
+    <div class="d-flex flex-row">
+      <%= image_tag "location.png", height:"20", width: "20", class: "mt-1 me-3" %>
+      <p><%= @admin_activity.place %></p>
+    </div>
 
   </div>
 

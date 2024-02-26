@@ -22,7 +22,7 @@
         <% if @admin_article.images.any? %>
           <div class="d-flex flex-wrap mb-3">
             <% @admin_article.images.each do |image| %>
-              <%= image_tag(image, height: 150, width: 150, class: "rounded me-2 mb-2") %>
+              <%= image_tag(image, height: 150, class: "rounded me-2 mb-2") %>
             <% end %>
           </div>
         <% end %>

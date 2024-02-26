@@ -1,9 +1,18 @@
 puts "Seeding..."
 
 Admin.create(
-  email: 'boss@gmail.com',
-  password: 'boss123',
-  )
+  email: 'jose@gmail.com',
+  password: 'jose123',
+  name: 'Jose Vega',
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
+  ).avatar.attach(io: File.open('app/assets/images/Jose.jpeg'), filename: 'Jose.jpeg')
+
+  Admin.create(
+    email: 'cristy@gmail.com',
+    password: 'cristy123',
+    name: 'Cristina Michaus Martinez',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
+    ).avatar.attach(io: File.open('app/assets/images/Cristina.jpeg'), filename: 'Cristina.jpeg')
 
   School.create(
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
@@ -58,7 +67,7 @@ Admin.create(
   ).images.attach(io: File.open('app/assets/images/feet3.jpeg'), filename: 'feet.3.jpeg')
   
   Album.create(
-    topic: 'Our Clases',
+    topic: 'Nuestras Clases',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
   )
   
@@ -68,24 +77,24 @@ Admin.create(
   )
   
   Album.create(
-    topic: 'Presentations',
+    topic: 'Presentaciones',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
   )
   
   Medium.create(
-    title: 'Lorena Lost Her Shoe!', 
+    title: 'Lorena Perdio su Zapatilla!', 
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
     album_id: 1,
   ).image.attach(io: File.open('app/assets/images/feet4.jpeg'), filename: 'feet4.jpeg')
   
   Medium.create(
-    title: 'Eveybodys Goin ta Town!', 
+    title: 'Todo Mundo a la Pista!', 
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
     album_id: 2,
   ).image.attach(io: File.open('app/assets/images/embrace4.jpeg'), filename: 'embrace4.jpeg')
   
   Medium.create(
-    title: 'Watch Them Fly!', 
+    title: 'Velos Volar!', 
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At consectetur lorem donec massa sapien faucibus. Tellus pellentesque eu tincidunt tortor aliquam nulla. Eros in cursus turpis massa tincidunt dui ut. Hac habitasse platea dictumst vestibulum rhoncus est. Pretium fusce id velit ut tortor pretium. Vitae tempus quam pellentesque nec. Eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet risus nullam eget felis eget. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Tristique senectus et netus et malesuada. Leo vel orci porta non pulvinar neque.',
     album_id: 3,
   ).image.attach(io: File.open('app/assets/images/feet5.jpeg'), filename: 'feet5.jpeg')

@@ -27,7 +27,7 @@
               <td><%= o.customer_name %></td>
               <td><%= o.customer_email %></td>
               <td><%= o.customer_address %></td>
-              <td>$ <%= o.total %></td>
+              <td><strong>$</strong><%= (o.total/100.0).to_s %></td>
               <td><%= link_to ">>", admin_order_path(o.id), class: 'link-style' %></td>
             </tr>
           <% end %>
@@ -54,7 +54,7 @@
               <td><%= o.customer_name %></td>
               <td><%= o.customer_email %></td>
               <td><%= o.customer_address %></td>
-              <td>$ <%= o.total %></td>
+              <td><strong>$</strong><%= (o.total/100.0).to_s %></td>
               <td><%= link_to ">>", admin_order_path(o.id), class: 'link-style' %></td>
             </tr>
           <% end %>

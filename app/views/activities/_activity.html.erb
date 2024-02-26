@@ -5,7 +5,9 @@
       <strong><%= activity.title %></strong>
     </p>
     <div class="row">
-      <%= activity.images.any? ? image_tag(activity.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+      <% if activity.images.any? %>
+        <%= image_tag(activity.images.first, height: 150, class: "rounded") %>
+      <% end %>
     </div>
   </div>
 

@@ -20,7 +20,7 @@
       <div class="d-flex flex-column align-items-center">
         <div class="row">
           <% if @admin_medium.image.attached? %>
-            <%= image_tag @admin_medium.image, height: 200, width: 200, class: ""  %>
+            <%= image_tag @admin_medium.image, height: 200, class: ""  %>
           <% end %>
         </div>
         <div class="row">
@@ -28,8 +28,8 @@
             <% if @admin_medium.file.video? %>
               <%= video_tag url_for(@admin_medium.file), controls: "" %>
             <% elsif @admin_medium.file.previewable? %>
-              <div style="height:300px;width:300px">
-                <%= image_tag @admin_medium.image.preview(resize_to_fit: [300,300]) %>
+              <div style="height:200px;width:200px">
+                <%= image_tag @admin_medium.image.preview(resize_to_fit: [200,200]) %>
               </div>
             <% end %>
           <% end %>

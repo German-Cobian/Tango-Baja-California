@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :media
     resources :events
     resources :schools, only: [ :edit, :update]
+    resources :profiles, only: [ :new, :edit, :update]
   end
 
   # Regular user routes

@@ -1,13 +1,22 @@
 <div id="<%= dom_id event %>">
-  <p>
-    <strong><%= event.title %></strong>
-  </p>
 
-  <p>
-    <%= truncate event.description, lenght: 100 %>
-  </p>
+  <div class="d-flex flex-column align-items-center mb-4">
+    <p>
+      <strong><%= event.title %></strong>
+    </p>
 
-  <p>
+    <div class="row mb-4">
+      <% if event.image.attached? %>
+        <%= image_tag event.image, height: 200, class: ""  %>
+      <% end %>
+    </div>
+
+    <p>
+      <%= event.description %>
+    </p>
+  </div>
+
+  <p class="mb-3">
     <strong>Hospiciado por:</strong>
     <%= event.hosted_by %>
   </p>

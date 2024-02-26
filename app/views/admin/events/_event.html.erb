@@ -1,14 +1,24 @@
 <div id="<%= dom_id event %>">
 
+<div class="d-flex flex-column align-items-center mb-4">
   <p>
     <strong><%= event.title %></strong>
   </p>
 
+  <div class="row mb-4">
+    <% if event.image.attached? %>
+      <%= image_tag event.image, height: 200, class: ""  %>
+    <% end %>
+  </div>
+
   <p>
     <%= event.description %>
   </p>
+</div>
 
-  <p>
+  
+
+  <p class="mb-3">
     <strong>Hospiciado por:</strong>
     <%= event.hosted_by %>
   </p>
@@ -23,4 +33,3 @@
     <p><%= event.place %></p>
   </div>
 
-</div>

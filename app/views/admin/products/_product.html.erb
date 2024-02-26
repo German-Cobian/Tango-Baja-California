@@ -1,31 +1,33 @@
 <div id="<%= dom_id product %>">
 
-  <% if product.images.any? %>
-    <div class="d-flex flex-wrap mb-3">
-      <% product.images.each do |image| %>
-        <%= image_tag(image, height: 150, width: 150, class: "rounded me-2 mb-2") %>
+  <div class="d-flex flex-column align-items-center mb-4">
+
+    <p>
+      <%= product.name %>
+    </p>
+    
+    <div class="row mb-4">
+      <% if product.images.any? %>
+        <div class="d-flex flex-wrap mb-3">
+          <% product.images.each do |image| %>
+            <%= image_tag(image, height: 200, class: "rounded me-2 mb-2") %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
+
+    <p>
+      <%= product.description %>
+    </p>
+
+  </div>
 
   <p>
-    <strong>Name:</strong>
-    <%= product.name %>
+    <strong>Precio:</strong> $ <%= (product.price/100.0).to_s %>
   </p>
 
   <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Active:</strong>
-    <%= product.active %>
+    <strong>Activo (?):</strong> <%= product.active %>
   </p>
 
 </div>

@@ -13,20 +13,27 @@ export default class extends Controller {
       const item = cart[i]
       total += item.price * item.quantity
       const div = document.createElement("div")
+      const articleDiv = document.createElement("div")
+      articleDiv.classList.add("d-flex", "flex-row", )
       const nameEl = document.createElement("p")
       nameEl.innerText =  `Articulo: ${item.name}`
+      nameEl.classList.add("me-5")
       const priceEl = document.createElement("p")
       priceEl.innerText =  `$${item.price/100.0} `
       const quantityEl = document.createElement("p")
       quantityEl.innerText = `Cantidad: ${item.quantity}`
+      const subtotalEl = document.createElement("p")
+      subtotalEl.innerText = `Subtotal: $${item.quantity*item.price/100}`
       const deleteButton = document.createElement("button")
       deleteButton.innerText = "Sacar del Carro"
       deleteButton.value = JSON.stringify({id: item.id})
       deleteButton.classList.add("btn", "btn-outline-danger", "mt-2", "mb-5", "py-0", )
       deleteButton.addEventListener("click", this.removeFromCart)
-      div.appendChild(nameEl)
-      div.appendChild(priceEl)
+      articleDiv.appendChild(nameEl)
+      articleDiv.appendChild(priceEl)
+      div.appendChild(articleDiv)
       div.appendChild(quantityEl)
+      div.appendChild(subtotalEl)
       div.appendChild(deleteButton)
       this.element.prepend(div)
     }
