@@ -25,7 +25,8 @@ Rails.application.routes.draw do
 
   # Regular user routes
 
-  root "home#index"
+  root 'start#index'
+  get 'home', to: 'home#index'
 
   resources :activities, only: [:index, :show]
   resources :articles, only: [:index, :show]

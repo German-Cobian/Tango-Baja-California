@@ -18,3 +18,6 @@ application.register("products", ProductsController)
 
 import SidebarController from "./sidebar_controller"
 application.register("sidebar", SidebarController)
+
+import StartController from "./start_controller"
+application.register("start", StartController)
