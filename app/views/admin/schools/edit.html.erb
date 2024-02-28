@@ -39,6 +39,11 @@
       <%= form.text_field :webpage, class: "form-control form-control-sm" %>
     </div>
 
+    <div class="mb-3">
+        <b><%= form.label "Video", class: "form-label" %></b><br />
+        <%= form.file_field :file, class: "form-control form-control-sm"  %>
+    </div>
+
     <div class="d-flex flex-row justify-content-end mt-3">
       <%= form.submit "Edita esta Informacion", class: 'btn btn-outline-primary py-0' %>
     </div>
