@@ -8,14 +8,15 @@
 </div>
 
 <div id="admin_products">
-  <div class="mx-5">
+  <div class="mb-3 mx-5">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Image</th>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Price</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Activo(?)</th>
         </tr>
       </thead>
       <tbody>
@@ -30,9 +31,16 @@
             </td>
             <td><%= link_to p.name, admin_product_path(p.id), class: 'link-style' %></td>
             <td><%= p.description %></td>
-            <td>$ <%= (p.price/100.0).to_s %></td>
-            </div>
+            <td><span>$ <%= (p.price/100.0).to_s %></span></td>
+            <td>
+              <% if p.active %>
+                <%= check_box_tag 'product_active', '1', true, disabled: true %>
+              <% else %>
+                <%= check_box_tag 'product_active', '0', false, disabled: true %>
+              <% end %>
+            </td>
           </tr>
+
         <% end %>
       </tbody>
     </table>

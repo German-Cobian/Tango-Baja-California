@@ -1,1 +1,19 @@
-<h3>Su orden ha sido procesada.</h3>
+<h3 class="mt-3 ms-5">Su pedido ha sido procesado.</h3>
+
+<button id="clearButton" class="mt-3 ms-5 btn btn-outline-success py-0">Cerrar pedido</button>
+
+<p class="mt-3 ms-5"><small>* Aunque su pedido ya esta en camino, 'Cerrar pedido' vacia el carro de compras 
+en la memoria de su dispositivo y asi evita posibles duplicaciones de esta misma compra en caso volver 
+a ser nuestro cliente en el futuro.</small></p>
+
+<script>
+const clearButton = document.getElementById("clearButton");
+clearButton.addEventListener("click", function() {
+  clear();
+});
+
+  function clear() {
+    localStorage.removeItem("cart");
+    window.location.reload();
+  }
+</script>

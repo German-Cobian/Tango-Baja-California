@@ -27,7 +27,12 @@
   </p>
 
   <p>
-    <strong>Activo (?):</strong> <%= product.active %>
+    <strong>Activo (?):</strong> 
+    <% if product.active %>
+      <%= check_box_tag 'product_active', '1', true, disabled: true %>
+    <% else %>
+      <%= check_box_tag 'product_active', '0', false, disabled: true %>
+    <% end %>
   </p>
 
 </div>

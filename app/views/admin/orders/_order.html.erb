@@ -50,7 +50,11 @@
 
     <p>
       <strong>Procesada (?):</strong>
-      <%= order.fulfilled %>
+      <% if order.fulfilled %>
+        <%= check_box_tag 'order_fulfilled', '1', true, disabled: true %>
+      <% else %>
+        <%= check_box_tag 'order_fulfilled', '0', false, disabled: true %>
+      <% end %>
     </p>
   </div>
 
