@@ -1,0 +1,9 @@
+.article-container {
+  width: 47%;
+}
+
+@media screen and (max-width: 875px) {
+  .article-container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+.album-container {
+  width: 47%;
+}
+
+@media screen and (max-width: 875px) {
+  .album-container {
+    width: 100%;
+  }
+}

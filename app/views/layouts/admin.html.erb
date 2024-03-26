@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TangoBajaCalifornia</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body data-controller="admin-sidebar">
+    <div>
+      <!-- Sidebar -->
+      <div class="sidebar" data-target="admin-sidebar.sidebar">
+        <%= render 'shared/admin_sidebar' %>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="divtoggleBtn">
+        <button class="toggleButton btn btn-outline-primary border border-primary" data-target="admin-sidebar.toggleButton">></button>
+      </div>
+
+      <!-- Page content -->
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
+

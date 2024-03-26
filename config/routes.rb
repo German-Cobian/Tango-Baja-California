@@ -1,0 +1,20 @@
+Rails.application.routes.draw do
+  devise_for :admins
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  root "home#index"
+
+  authenticated :admin_user do
+    root to: "admin#index", as: :admin_root
+  end
+
+  get "admin" => "admin#index"
+
+  namespace :admin do
+    resources :activities
+    resources :articles
+    resources :albums
+    resources :media
+  end
+
+end

@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag 'admin_articles' %>
+
+<p style="color: green" class="ms-5"><%= notice %></p>
+
+<div class="d-flex flex-row justify-content-between mt-3 mx-5">
+  <h3 class="ms-5">Publicaciones</h3>
+  <div>
+    <%= link_to "Crea Una Publicacion", new_admin_article_path, class: "btn btn-outline-primary py-0" %>
+  </div>
+</div>
+
+<div class="my-5 mx-5">
+
+  <% @admin_articles.group_by(&:category).each do |category, articles| %>
+    <% if category == 'Miscelanea' %>
+      <h4 class="ms-5">Miscelanea</h4>
+      <ul class="d-flex flex-wrap">
+        <% articles.each do |article| %>
+          <% if article.category == 'Miscelanea' %>
+            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render article %>
+            <p class="d-flex flex-row justify-content-end">
+              <%= link_to "Mas", admin_article_path(article.id) %>
+            </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% elsif category == 'Historia del Tango' %>
+      <h4 class="mt-5 ms-5">Historia del Tango</h4>
+      <ul class="d-flex flex-wrap">
+        <% articles.each do |article| %>
+          <% if article.category == 'Historia del Tango' %>
+            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render article %>
+              <p class="d-flex flex-row justify-content-end">
+                <%= link_to "Mas", admin_article_path(article.id) %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% elsif category == 'Tecnica' %>
+      <h4 class="mt-5 ms-5">Tecnica</h4>
+      <ul class="d-flex flex-wrap">
+        <% articles.each do |article| %>
+          <% if article.category == 'Tecnica' %>
+            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+              <%= render article %>
+              <p class="d-flex flex-row justify-content-end">
+                <%= link_to "Mas", admin_article_path(article.id) %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+</div>

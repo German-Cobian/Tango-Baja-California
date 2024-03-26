@@ -1,0 +1,58 @@
+.sidebar {
+  top: 0;
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  z-index: 10000;
+  border-right: 1px black solid;
+  background-color: #353563;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-20%);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.divtoggleBtn {
+  display: block;
+}
+
+.container {
+  height: 100%;
+  width: 75%;
+  margin-left: 20%;
+}
+
+@media only screen and (max-width: 800px) {
+  .divtoggleBtn {
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+  }
+
+  .sidebar {
+    display: none;
+    min-width: 100vw;
+    min-height: 100vh;
+    transform: translateX(-100%);
+    z-index: 100; 
+  }
+
+  .sidebar.open {
+    display: block;
+    transform: translateX(0);
+    z-index: 101;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    margin-left: 3%;
+  }
+
+}

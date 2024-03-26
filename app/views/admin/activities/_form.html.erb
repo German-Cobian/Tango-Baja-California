@@ -1,0 +1,50 @@
+<%= form_with(model: [:admin, admin_activity]) do |form| %>
+  <% if admin_activity.errors.any? %>
+    <div style="color: red" class="ms-5">
+      <h6><%= pluralize(admin_activity.errors.count, "error") %> ha impedido que esta actividad se guarde:</h6>
+
+      <ul>
+        <% admin_activity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="border border-dark rounded mx-5 py-5 px-5">
+
+    <div class="mb-3">
+      <b><%= form.label "Categoria:", class: "form-label" %></b><br />
+      <%= form.select :category, [["Clase", "Clase"], ["Taller", "Taller"], ["Seminario", "Seminario"]], class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Titulo:", class: "form-label" %></b><br />
+      <%= form.text_field :title, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Descripcion:", class: "form-label" %></b><br />
+      <%= form.text_area :description, size: "100x4", class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Tiempo:", class: "form-label" %></b><br />
+      <%= form.text_field :time, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Lugar:", class: "form-label" %></b><br />
+      <%= form.text_field :place, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="mb-3">
+      <b><%= form.label "Imagenes:", class: "form-label" %></b><br />
+      <%= form.file_field :images, multiple: true, class: "form-control form-control-sm" %>
+    </div>
+
+    <div class="d-flex flex-row justify-content-end mt-3">
+      <%= form.submit class: 'btn btn-outline-primary py-0' %>
+    </div>
+  </div>
+<% end %>

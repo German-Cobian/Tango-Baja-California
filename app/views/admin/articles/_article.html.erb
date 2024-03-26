@@ -1,0 +1,16 @@
+<div id="<%= dom_id article %>" class="mb-5">
+
+  <div class="d-flex flex-column align-items-center mb-3">
+    <p class="row mb-3">
+      <strong><%= article.title %></strong>
+    </p>
+    <div class="row">
+      <%= article.images.any? ? image_tag(article.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+    </div>
+  </div>
+
+  <p>
+    <%= article.text %>
+  </p>
+
+</div>
