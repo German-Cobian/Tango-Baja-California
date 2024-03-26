@@ -4,29 +4,7 @@
   <%= link_to "<<", events_path, class: 'link-style' %>
   </div>
  
-  <p>
-    <strong><%= @event.title %></strong>
-  </p>
-
-  <p>
-    <%= @event.description %>
-  </p>
-
-  <p>
-    <strong>Hospiciado por:</strong>
-    <%= @event.hosted_by %>
-  </p>
-
-  <div class="d-flex flex-row">
-    <%= image_tag "calendar.png", height:"30", width: "30", class: "me-3" %>
-    <p class="me-3"><%= translate_to_spanish(@event.start_time) %></p>
-    <p class="ms-3"><%= translate_to_spanish(@event.end_time) %></p>
-  </div>
-
-  <div class="d-flex flex-row">
-    <%= image_tag "location.png", height:"30", width: "30", class: "me-3" %>
-    <p><%= @event.place %></p>
-  </div>
+  <%= render @event %>
 
 </div>
 

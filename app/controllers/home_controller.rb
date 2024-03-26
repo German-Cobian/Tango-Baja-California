@@ -7,6 +7,6 @@ class HomeController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:description, :bio_jose, :bio_cris, :phone, :email, :whatsapp, :facebook, :instagram, :webpage)
+    params.require(:school).permit(:description, :phone, :email, :whatsapp, :facebook, :instagram, :webpage)
   end
 end

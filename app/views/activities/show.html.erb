@@ -9,7 +9,13 @@
       <strong><%= @activity.title %></strong>
     </p>
     <div class="row">
-      <%= @activity.images.any? ? image_tag(@activity.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+      <% if @activity.images.any? %>
+          <div class="d-flex flex-wrap mb-3">
+            <% @activity.images.each do |image| %>
+              <%= image_tag(image, height: 150, class: "rounded me-2 mb-2") %>
+            <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 

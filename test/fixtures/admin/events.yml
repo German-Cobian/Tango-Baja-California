@@ -5,7 +5,6 @@ one:
   description: MyText
   hosted_by: MyString
   start_time: 2024-02-08 10:22:57
-  end_time: 2024-02-08 10:22:57
   place: MyString
 
 two:
@@ -13,5 +12,4 @@ two:
   description: MyText
   hosted_by: MyString
   start_time: 2024-02-08 10:22:57
-  end_time: 2024-02-08 10:22:57
   place: MyString

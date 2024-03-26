@@ -12,21 +12,32 @@ Rails.application.routes.draw do
   get "admin" => "admin#index"
 
   namespace :admin do
+    resources :orders
+    resources :products
     resources :activities
     resources :articles
     resources :albums
     resources :media
     resources :events
     resources :schools, only: [ :edit, :update]
+    resources :profiles, only: [ :new, :edit, :update]
   end
 
   # Regular user routes
 
-  root "home#index"
+  root 'start#index'
+  get 'home', to: 'home#index'
 
   resources :activities, only: [:index, :show]
   resources :articles, only: [:index, :show]
   resources :albums, only: [:index, :show]
   resources :media, only: [:show]
   resources :events, only: [:index, :show]
+  resources :products, only: [:index]
+
+  get "cart" => "carts#show"
+  post "checkout" => "checkouts#create"
+  get "success" => "checkouts#success"
+  get "cancel" => "checkouts#cancel"
+  post "webhooks" => "webhooks#stripe"
 end

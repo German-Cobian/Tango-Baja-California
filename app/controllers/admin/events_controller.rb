@@ -3,8 +3,7 @@ class Admin::EventsController < AdminController
 
   # GET /admin/events or /admin/events.json
   def index
-    @admin_events = Event.where(start_time: Time.now.beginning_of_month.beginning_of_week..
-    Time.now.end_of_month.end_of_week)
+    @admin_events = Event.where(start_time: Time.now.beginning_of_year..Time.now.end_of_year)
   end
 
   # GET /admin/events/1 or /admin/events/1.json
@@ -37,6 +36,7 @@ class Admin::EventsController < AdminController
 
   # PATCH/PUT /admin/events/1 or /admin/events/1.json
   def update
+    @admin_event = Event.find(params[:id])
     respond_to do |format|
       if @admin_event.update(admin_event_params)
         format.html { redirect_to admin_event_url(@admin_event), notice: "El Evento ha sido modificado." }
@@ -66,6 +66,6 @@ class Admin::EventsController < AdminController
 
     # Only allow a list of trusted parameters through.
     def admin_event_params
-      params.require(:event).permit(:title, :description, :hosted_by, :start_time, :end_time, :place)
+      params.require(:event).permit(:title, :description, :hosted_by, :start_time, :place, :image)
     end
 end

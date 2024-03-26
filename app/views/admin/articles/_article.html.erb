@@ -5,7 +5,9 @@
       <strong><%= article.title %></strong>
     </p>
     <div class="row">
-      <%= article.images.any? ? image_tag(article.images.first, height: 150) : image_tag("https://via.placeholder.com/150")%>
+      <% if article.images.any? %>
+        <%= image_tag(article.images.first, height: 150, class: "rounded") %>
+      <% end %>
     </div>
   </div>
 

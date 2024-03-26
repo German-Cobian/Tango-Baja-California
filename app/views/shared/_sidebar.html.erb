@@ -46,7 +46,7 @@
 
     <div class="d-flex flex-column align-items-start mb-5 ms-5">
       <div class="mb-4">
-        <%= link_to root_path, method: :get do %>
+        <%= link_to home_path, method: :get do %>
           <%= image_tag "home.png", height: "22", width: "22", class: 'rounded', alt: "Home" %>
         <% end %>
       </div>
@@ -54,13 +54,10 @@
       <%= link_to "Publicaciones", articles_path, class: "text-white link-style mb-4" %>
       <%= link_to "Galerias", albums_path, class: "text-white link-style mb-4" %>
       <%= link_to "Eventos", events_path, class: "text-white link-style mb-4" %>
-      <p class="text-white link-style">Tienda</p>
+      <%= link_to "Tienda", products_path, class: "text-white link-style mb-4" %>
+      <%= link_to "Donaciones", "https://donate.stripe.com/test_5kA28u1ahcYkgHm3cc", class: "text-white link-style mb-4" %>
     </div>
 
-  </div>
-
-  <div class="d-flex flex-row justify-content-end">
-    <small><%= link_to "*", new_admin_session_path, class: "text-danger link-style" %></small>
   </div>
 
 </aside>

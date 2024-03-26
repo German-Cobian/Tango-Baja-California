@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_11_034951) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_22_070814) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_11_034951) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "bio"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -84,7 +86,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_11_034951) do
     t.text "description"
     t.string "hosted_by"
     t.datetime "start_time"
-    t.datetime "end_time"
     t.string "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -99,10 +100,37 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_11_034951) do
     t.index ["album_id"], name: "index_media_on_album_id"
   end
 
+  create_table "order_products", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "order_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_products_on_order_id"
+    t.index ["product_id"], name: "index_order_products_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "customer_name"
+    t.string "customer_email"
+    t.string "customer_address"
+    t.integer "total"
+    t.boolean "fulfilled"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "price"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "schools", force: :cascade do |t|
     t.string "description"
-    t.string "bio_jose"
-    t.string "bio_cris"
     t.string "email"
     t.string "phone"
     t.string "whatsapp"
@@ -116,4 +144,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_11_034951) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "media", "albums"
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
 end

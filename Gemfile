@@ -74,6 +74,11 @@ group :test do
 
 end
 
+# Authentication
 gem "devise", "~> 4.9"
 
+# Calendar
 gem "simple_calendar", "~> 3.0"
+
+# Payment processing
+gem "stripe", "~> 10.8"

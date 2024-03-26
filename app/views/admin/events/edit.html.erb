@@ -41,13 +41,13 @@
     </div>
 
     <div class="mb-3">
-      <b><%= form.label "Termina:", class: "form-label" %></b><br />
-      <%= form.datetime_field :end_time, class: "form-control form-control-sm" %>
+      <b><%= form.label "Lugar:", class: "form-label" %></b><br />
+      <%= form.text_field :place, class: "form-control form-control-sm" %>
     </div>
 
     <div class="mb-3">
-      <b><%= form.label "Lugar:", class: "form-label" %></b><br />
-      <%= form.text_field :place, class: "form-control form-control-sm" %>
+      <b><%= form.label "Imagen:", class: "form-label" %></b><br />
+      <%= form.file_field :image, multiple: true, class: "form-control form-control-sm" %>
     </div>
 
     <div class="d-flex flex-row justify-content-end mt-3">

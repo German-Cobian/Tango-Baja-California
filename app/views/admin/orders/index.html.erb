@@ -1,0 +1,62 @@
+<p style="color: green" class="ms-5"><%= notice %></p>
+
+<div class="d-flex flex-row justify-content-between mt-3 me-5">
+  <h3 class="ms-5">Pedidos</h3>
+</div>
+
+<div class="my-5 mx-5">
+  
+    <div class="mb-5">
+      <h5 class="mb-3">Pedidos Aun No Procesados</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre del Cliente</th>
+            <th scope="col">Email</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Total</th>
+            <th scope="col">>></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @not_fulfilled_orders.each do |o| %>
+            <tr>
+              <td><%= o.customer_name %></td>
+              <td><%= o.customer_email %></td>
+              <td><%= o.customer_address %></td>
+              <td><strong>$</strong><%= (o.total/100.0).to_s %></td>
+              <td><%= link_to ">>", admin_order_path(o.id), class: 'link-style' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="mb-3">
+      <h5>Pedidos Procesados</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre del Cliente</th>
+            <th scope="col">Email</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Total</th>
+            <th scope="col">>></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @fulfilled_orders.each do |o| %>
+            <tr>
+              <td><%= o.customer_name %></td>
+              <td><%= o.customer_email %></td>
+              <td><%= o.customer_address %></td>
+              <td><strong>$</strong><%= (o.total/100.0).to_s %></td>
+              <td><%= link_to ">>", admin_order_path(o.id), class: 'link-style' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+</div>
