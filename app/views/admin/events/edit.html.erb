@@ -1,0 +1,10 @@
+<h3 class="mt-3 ms-5">Edita este Evento</h3>
+
+<%= render "form", admin_event: @admin_event %>
+
+<br>
+
+<div class="ms-5 mb-5">
+  <%= link_to "Mostrar este Evento", admin_event_path(@admin_event.id), class: 'me-3' %> |
+  <%= link_to "Listado de Eventos", admin_events_path, class: 'ms-3' %>
+</div>
