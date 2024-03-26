@@ -1,8 +1,21 @@
 .container {
   position: relative;
-  top: 20%;
+}
+
+.logo-style {
+  background-color: white;
 }
 
 .link-style {
   text-decoration: none;
+}
+
+.txt-phone {
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    margin-left: 5%;
+  }
 }

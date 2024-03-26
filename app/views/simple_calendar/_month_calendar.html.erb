@@ -1,0 +1,36 @@
+<div class="simple-calendar">
+  <div class="calendar-heading">
+    <time datetime="<%= start_date.strftime('%Y-%m') %>" class="calendar-title text-danger">
+      <%= translate_month_to_spanish(start_date) %>
+      <%= start_date.year %>
+    </time>
+
+    <nav class="d-flex flex-row justify-content-around my-3">
+      <small><%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view %></small>
+      <small><%= link_to t('simple_calendar.today', default: 'Hoy'), calendar.url_for_today_view %></small>
+      <small><%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view %></small>
+    </nav>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <% date_range.slice(0, 7).each do |day| %>
+          <th class="text-primary fs-6"><small><%= translate_day_to_spanish(day) %></small></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% date_range.each_slice(7) do |week| %>
+        <tr>
+          <% week.each do |day| %>
+            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+              <small><% instance_exec(day, calendar.sorted_events_for(day), &passed_block) %></small>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

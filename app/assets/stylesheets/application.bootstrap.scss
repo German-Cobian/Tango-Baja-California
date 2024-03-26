@@ -1,8 +1,43 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import 'home';
 @import 'admin';
 @import 'admin_sidebar';
 @import 'admin_activities';
 @import 'admin_articles';
 @import 'admin_albums';
 @import 'admin_events';
+
+.body {
+  background-color: black;
+}
+
+.link-style {
+  text-decoration: none;
+}
+
+.simple-calendar {
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {
+    background-color: rgb(245, 245, 235);
+  }
+}

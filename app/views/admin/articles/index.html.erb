@@ -17,11 +17,11 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Miscelanea' %>
-            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
+            <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
+              <p class="d-flex flex-row justify-content-end">
+                <%= link_to ">>", admin_article_path(article.id), class: 'link-style' %>
+              </p>
               <%= render article %>
-            <p class="d-flex flex-row justify-content-end">
-              <%= link_to "Mas", admin_article_path(article.id) %>
-            </p>
             </li>
           <% end %>
         <% end %>
@@ -31,11 +31,11 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Historia del Tango' %>
-            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
-              <%= render article %>
+            <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
               <p class="d-flex flex-row justify-content-end">
-                <%= link_to "Mas", admin_article_path(article.id) %>
+                <%= link_to ">>", admin_article_path(article.id), class: 'link-style' %>
               </p>
+              <%= render article %>
             </li>
           <% end %>
         <% end %>
@@ -45,11 +45,11 @@
       <ul class="d-flex flex-wrap">
         <% articles.each do |article| %>
           <% if article.category == 'Tecnica' %>
-            <li class="article-container d-flex flex-column border border-dark rounded my-2 mx-2 py-5 px-5">
-              <%= render article %>
+            <li class="article-container d-flex flex-column border border-danger rounded my-2 mx-2 py-3 px-5">
               <p class="d-flex flex-row justify-content-end">
-                <%= link_to "Mas", admin_article_path(article.id) %>
+                <%= link_to ">>", admin_article_path(article.id), class: 'link-style' %>
               </p>
+              <%= render article %>
             </li>
           <% end %>
         <% end %>

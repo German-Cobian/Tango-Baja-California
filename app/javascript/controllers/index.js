@@ -4,8 +4,8 @@
 
 import { application } from "./application"
 
-import AdminSidebarController from "./admin_sidebar_controller"
-application.register("admin-sidebar", AdminSidebarController)
+import SidebarController from "./sidebar_controller"
+application.register("sidebar", SidebarController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

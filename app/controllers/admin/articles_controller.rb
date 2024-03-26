@@ -8,6 +8,7 @@ class Admin::ArticlesController < AdminController
 
   # GET /admin/articles/1 or /admin/articles/1.json
   def show
+    @admin_article = Article.find(params[:id])
   end
 
   # GET /admin/articles/new
